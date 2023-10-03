@@ -103,7 +103,7 @@ public class ComplexNumber {
 ```
 
 ```java
-// constructors 调用
+// 调用
 ComplexNumber complexNumber1 = new ComplexNumber(2.0, 3.0);
 ComplexNumber complexNumber2 = new ComplexNumber(4.0, 5.0);
 ```
@@ -133,14 +133,15 @@ public class ComplexNumber {
 ```
 
 ```java
-// static factory method 调用
+// 调用
+// One advantage of static factory methods is that, unlike constructors, they have names.
 ComplexNumber complexNumber1 = ComplexNumber.fromCartesian(2.0, 3.0);
 ComplexNumber complexNumber2 = ComplexNumber.fromPolar(5.0, Math.PI / 4);
 
 ```
 
 ```java
-//  A second advantage of static factory methods is that, unlike constructors, they are not required to create a new object each time they’re invoked 
+//  A second advantage of static factory methods is that, unlike constructors, they are not required to create a new object each time they’re invoked.
 public class Singleton {
     // 私有静态变量
     private static final Singleton instance = new Singleton();
