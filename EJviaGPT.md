@@ -2,19 +2,19 @@
 
 - [EffectiveJava-GPTGuide](#effectivejava-gptguide)
   - [Common](#common)
-    - [使用内部类和匿名内部类实现简单闭包](#使用内部类和匿名内部类实现简单闭包)
-    - [使用内部类和匿名内部类实现回调](#使用内部类和匿名内部类实现回调)
+    - [使用成员接口和匿名类实现简单闭包](#使用成员接口和匿名类实现简单闭包)
+    - [使用成员接口和匿名类实现回调](#使用成员接口和匿名类实现回调)
   - [Rules](#rules)
     - [01 用 static factory method 代替 constructors](#01-用-static-factory-method-代替-constructors)
 
 ## Common
 
-### 使用内部类和匿名内部类实现简单闭包
+### 使用成员接口和匿名类实现简单闭包
 
 ```java
 // 动态地指定计算器要执行的操作
 public class Calculator {
-    // member interface 成员接口
+    // member interface 
     interface Operation {
         int calculate(int a, int b);
     }
@@ -26,7 +26,7 @@ public class Calculator {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
 
-        // 使用内部类实现加法
+        // 使用匿名类实现加法
         Operation addition = new Operation() {
             @Override
             public int calculate(int a, int b) {
@@ -36,7 +36,7 @@ public class Calculator {
 
         int result1 = calculator.performOperation(5, 3, addition); // 结果为 8
 
-        // 使用内部类实现乘法
+        // 使用匿名类实现乘法
         Operation multiplication = new Operation() {
             @Override
             public int calculate(int a, int b) {
@@ -49,7 +49,7 @@ public class Calculator {
 }
 ```
 
-### 使用内部类和匿名内部类实现回调
+### 使用成员接口和匿名类实现回调
 
 ```java
 // 计算器类
@@ -70,7 +70,7 @@ public class Main {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
 
-        // 传递了两个整数和一个匿名内部类作为回调函数
+        // 传递了两个整数和一个匿名类作为回调函数
         // 在计算完成后执行一些额外逻辑，无需修改 Calculator 类的代码
         calculator.add(2, 3, new Calculator.Callback() {
             @Override
@@ -119,6 +119,7 @@ public class ComplexNumber {
         this.imaginary = imaginary;
     }
 
+    // One advantage of static factory methods is that, unlike constructors, they have names.
     public static ComplexNumber fromCartesian(double real, double imaginary) {
         return new ComplexNumber(real, imaginary);
     }
@@ -134,7 +135,6 @@ public class ComplexNumber {
 
 ```java
 // 调用
-// One advantage of static factory methods is that, unlike constructors, they have names.
 ComplexNumber complexNumber1 = ComplexNumber.fromCartesian(2.0, 3.0);
 ComplexNumber complexNumber2 = ComplexNumber.fromPolar(5.0, Math.PI / 4);
 
@@ -142,17 +142,253 @@ ComplexNumber complexNumber2 = ComplexNumber.fromPolar(5.0, Math.PI / 4);
 
 ```java
 //  A second advantage of static factory methods is that, unlike constructors, they are not required to create a new object each time they’re invoked.
+
 public class Singleton {
-    // 私有静态变量
+    // 私有, 静态, 不可指向其他对象 
     private static final Singleton instance = new Singleton();
 
     private Singleton() {
         // 私有构造器，外部无法直接实例化
     }
 
+    // 在这个例子中，getInstance 方法会始终返回同一个 Singleton 实例，因为它每次都返回了预先创建好的静态变量 instance
     public static Singleton getInstance() {
         return instance;
     }
 }
 
+```
+
+```java
+// The ability of static factory methods to return the same object from repeated invocations allows classes to maintain strict control over what instances exist at any time.
+
+public class ConnectionPool {
+    private static final int MAX_CONNECTIONS = 10;
+    private static final List<Connection> connections = new ArrayList<>();
+
+    private ConnectionPool() {
+        // 私有构造器, 外部无法直接实例化
+    }
+
+    // 管理数据库连接, 在程序运行期间保持固定数量的连接池实例, 防止资源过度占用
+    public static Connection getConnection() {
+        if (connections.size() < MAX_CONNECTIONS) {
+            Connection connection = new Connection();
+            connections.add(connection);
+            return connection;
+        } else {
+            throw new IllegalStateException("Connection limit reached");
+        }
+    }
+}
+
+```
+
+```java
+// A third advantage of static factory methods is that, unlike constructors, they can return an object of any subtype of their return type.
+
+// 定义 shape 接口
+public interface Shape {
+    void draw();
+}
+
+// 定义两个该接口的实现类 Circle 和 Rectangle
+public class Circle implements Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+public class Rectangle implements Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a rectangle");
+    }
+}
+
+// 定义工厂类 ShapeFactory
+public class ShapeFactory {
+    // 虽然返回类型是 Shape 接口, 但实际返回的是该接口的实现类的实例
+    public static Shape createCircle() {
+        return new Circle();
+    }
+
+    public static Shape createRectangle() {
+        return new Rectangle();
+    }
+}
+
+```
+
+```java
+// 调用
+public class Main {
+    public static void main(String[] args) {
+        Shape circle = ShapeFactory.createCircle();
+        circle.draw();  // 输出: Drawing a circle
+
+        Shape rectangle = ShapeFactory.createRectangle();
+        rectangle.draw();  // 输出: Drawing a rectangle
+    }
+}
+```
+
+```java
+// A fourth advantage of static factories is that the class of the returned object can vary from call to call as a function of the input parameters. 
+
+public interface Shape {
+    void draw();
+}
+
+public class Circle implements Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+public class Rectangle implements Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a rectangle");
+    }
+}
+
+public class ShapeFactory {
+    public static Shape createShape(String type) {
+        // 实际返回类型由输入参数动态决定
+        if (type.equalsIgnoreCase("circle")) {
+            return new Circle();
+        } else if (type.equalsIgnoreCase("rectangle")) {
+            return new Rectangle();
+        } else {
+            throw new IllegalArgumentException("Invalid shape type: " + type);
+        }
+    }
+}
+
+```
+
+```java
+// 调用
+Shape circle = ShapeFactory.createShape("circle");
+circle.draw();  // 输出: Drawing a circle
+
+Shape rectangle = ShapeFactory.createShape("rectangle");
+rectangle.draw();  // 输出: Drawing a rectangle
+```
+
+```java
+// A fifth advantage of static factories is that the class of the returned object need not exist when the class containing the method is written.
+
+public interface Product {
+    void display();
+}
+
+// 在编写包含该方法的工厂类时，实际返回的类可以不存在, 留到后续开发再实现
+public class ProductFactory {
+    public static Product createProduct(String type) {
+        if (type.equalsIgnoreCase("typeA")) {
+            return new ConcreteProductA();
+        } else if (type.equalsIgnoreCase("typeB")) {
+            return new ConcreteProductB();
+        } else {
+            throw new IllegalArgumentException("Invalid product type: " + type);
+        }
+    }
+}
+```
+
+```java
+// There are three essential components in a service provider framework: 
+// 1. a service interface, which represents an implementation; 
+// 2. a provider registration API, which providers use to register implementations; 
+// 3. a service access API, which clients use to obtain instances of the service.
+// 4. [Optional] a service provider interface. 
+
+// Service Interface 
+public interface Logger {
+    void log(String message);
+}
+
+public class LoggerFactory {
+    private static Map<String, Logger> loggers = new HashMap<>();
+
+    // Provider Registration API
+    public static void registerLogger(String name, Logger logger) {
+        loggers.put(name, logger);
+    }
+
+    // Service Access API
+    public static Logger getLogger(String name) {
+        return loggers.get(name);
+    }
+}
+
+// 定义实现类
+public class ConsoleLogger implements Logger {
+    @Override
+    public void log(String message) {
+        System.out.println("Console Logger: " + message);
+    }
+}
+
+public class FileLogger implements Logger {
+    @Override
+    public void log(String message) {
+        System.out.println("File Logger: " + message);
+    }
+}
+
+public class DatabaseLogger implements Logger {
+    @Override
+    public void log(String message) {
+        System.out.println("Database Logger: " + message);
+    }
+}
+
+// 调用
+public class Main {
+    public static void main(String[] args) {
+        // 调用 Provider Registration API
+        LoggerFactory.registerLogger("console", new ConsoleLogger());
+        LoggerFactory.registerLogger("file", new FileLogger());
+        LoggerFactory.registerLogger("database", new DatabaseLogger());
+
+        // 调用 Service Access API, 由参数动态决定返回类型
+        Logger consoleLogger = LoggerFactory.getLogger("console");
+        consoleLogger.log("This is a console message");
+
+        Logger fileLogger = LoggerFactory.getLogger("file");
+        fileLogger.log("This is a file message");
+
+        Logger databaseLogger = LoggerFactory.getLogger("database");
+        databaseLogger.log("This is a database message");
+    }
+}
+```
+
+```java
+// The main limitation of providing only static factory methods is that classes without public or protected constructors cannot be subclassed. 
+// A second shortcoming of static factory methods is that they are hard for programmers to find.
+
+// Common names for static factory methods:
+
+// from  接收单个参数, 返回对应类型的实例
+Date d = Date.from(instant);
+// of 返回包含若干元素的不可变集合实例, 或包含若干参数的实例
+Set<Rank> faceCards = EnumSet.of(JACK, QUEEN, KING);
+// valueOf 返回一个与参数具有相同值的实例
+BigInteger prime = BigInteger.valueOf(Integer.MAX_VALUE);
+// instance / getInstance 获取单例或共享实例, 通常在单例模式中使用
+StackWalker luke = StackWalker.getInstance(options);
+// create / newInstance 返回一个新的实例, 类似构造函数
+Object newArray = Array.newInstance(classObject, arrayLen);
+// getType 返回与方法名称匹配的实例类型
+FileStore fs = Files.getFileStore(path);
+// newType 返回一个新的实例
+BufferedReader br = Files.newBufferedReader(path);
+// type 是 getType 和 newType 的简化版
+List<Complaint> litany = Collections.list(legacyLitany);
 ```
