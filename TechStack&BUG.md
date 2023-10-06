@@ -10,6 +10,7 @@
   - [@RequiredArgsConstructor 和 @AllArgsConstructor](#requiredargsconstructor-和-allargsconstructor)
   - [@AllArgsConstructor 导致 @Value 取不到值](#allargsconstructor-导致-value-取不到值)
   - [kotlin 版本不一致](#kotlin-版本不一致)
+  - [JavaBeans pattern / Builder pattern / @Data 比较](#javabeans-pattern--builder-pattern--data-比较)
 
 ## 最小化可行产品 MVP Minimum Viable Product
 
@@ -113,4 +114,14 @@ DAO（data access object）
 
 ```bash
 # idea -> build -> rebuild project
+```
+
+## JavaBeans pattern / Builder pattern / @Data 比较
+
+```java
+JavaBeans pattern // 简单易用，但可能导致对象在构建过程中处于不一致状态。
+Builder pattern // 强制执行特定的构建过程，确保对象始终处于有效状态。适用于具有可选参数的复杂对象。
+@Data // 减少样板代码，适用于简单的数据承载类。
+
+// 选择适合你应用程序要求和对象复杂度的模式取决于具体情况。
 ```
