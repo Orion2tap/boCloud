@@ -11,6 +11,9 @@
   - [@AllArgsConstructor 导致 @Value 取不到值](#allargsconstructor-导致-value-取不到值)
   - [kotlin 版本不一致](#kotlin-版本不一致)
   - [JavaBeans pattern / Builder pattern / @Data 比较](#javabeans-pattern--builder-pattern--data-比较)
+  - [Functional interface and lambda expression](#functional-interface-and-lambda-expression)
+    - [Supplier](#supplier)
+    - [Dynamic proxy](#dynamic-proxy)
 
 ## 最小化可行产品 MVP Minimum Viable Product
 
@@ -124,4 +127,40 @@ Builder pattern // 强制执行特定的构建过程，确保对象始终处于�
 @Data // 减少样板代码，适用于简单的数据承载类。
 
 // 选择适合你应用程序要求和对象复杂度的模式取决于具体情况。
+```
+
+## Functional interface and lambda expression
+
+### Supplier<T>
+
+```java
+interface Supplier<T> {
+    T get();
+}
+
+```
+
+```java
+// call
+
+public static void main(String[] args) {
+     // Create a factory for generating random numbers.
+     // Equivalent to "(new Random()).nextInt(100)"
+     Supplier<Integer> randomNumberFactory = () -> new Random().nextInt(100);
+
+     // Use the factory to generate random numbers.
+     // When an object implements the `Supplier<T>` interface, calling the parameterless `get` method of this object will execute the corresponding lambda expression.
+     int random1 = randomNumberFactory.get();
+     int random2 = randomNumberFactory.get();
+
+     System.out.println("Random Number 1: " + random1); 
+     System.out.println("Random Number 2: " + random2); 
+}
+
+```
+
+### Dynamic proxy
+
+```java
+
 ```
