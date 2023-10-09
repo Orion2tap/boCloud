@@ -1,1 +1,1 @@
-# EJviaGPT
+# To be a pragmatic programmer
