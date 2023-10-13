@@ -1,42 +1,47 @@
 # GPT 注册和升级教程
 
-- 已经写的很具体了, 建议先自己按步骤探索, 遇到问题联系作者, 上班摸鱼期间尽量帮你解决(免费)
+- 已经写的很具体了, 建议先自己按步骤探索, 后续可能会出视频教程
+- 遇到问题联系作者, 上班摸鱼/下班期间尽量帮你解决(免费)
 - 实在学不会或者没时间可代为注册或升级(辛苦费您看着给o.O)
   - V: Orion2tap
   - Q: 284115962
+  - B站: 斗谷於兔/斗谷于兔
   - 小红书: 斗谷於兔/斗谷於兔的小号
 - 更新于 2023.10.13
 
 ## 一. 注册 GPT3.5
 
-### Step 1. VPN 的购买和启用 (已有可跳过)
+### Step 1. VPN 的购买和开启 (已有可跳过)
 
-#### Win/Mac/Android 端
+#### Windows / MacOS
 
-- 访问 https://ducklink.cloud, 注册一个账号 (可用国内邮箱), 邀请码可以不填, 也可以填我的 4vTPLMlt
-- 点击左侧 "购买订阅", 一般选择最便宜的套餐够用了 (5rmb/月), 支付宝或微信支付
-- 点击左侧 "使用文档", 点击 "Ducklink 客户端下载", 根据操作系统选择 Windows / Mac 客户端, 安装后登录, 选择任意美国节点后, 点击"连接", 进入下一步"Outlook 邮箱注册"
+- 电脑访问 https://ducklink.cloud, 注册一个账号 (可用国内邮箱)
+  - 邀请码可以不填, 也可以填我的邀请码 4vTPLMlt
+- 点击左侧 "购买订阅"
+  - 一般选择最便宜的套餐够用了 (5rmb/月), 支付宝或微信支付
+- 点击左侧 "使用文档", 点击 "Ducklink 客户端下载", 根据操作系统选择 Windows / Mac 客户端
+- 安装 Ducklink 客户端, 登录后选择任意美国节点 (不要让它自动选择), 点击"连接", 进入 Step 2 "Outlook 邮箱注册"
 
-#### iOS 端
+#### (2) iOS 端 (安卓机在公司, 下周测试后更新安卓端)
 
-- 访问 https://store.kxsw.org/
+- 手机或电脑访问 https://store.kxsw.org/
 - 点击"已购 Shadowrocket 美区账号" (35 rmb)
-- 在右侧填入你的大陆邮箱, 支付方式选择支付宝, 提交订单
-- 邮箱收到账号后, 先登录苹果官网
-  - 修改邮箱(可以用大陆邮箱)
+- 在右侧填入邮箱(可用大陆邮箱), 支付方式选择支付宝, 提交订单
+- 邮箱收到发给你的美区账号后, 先登录 Apple 官网
+  - 修改邮箱 (可用大陆邮箱)
   - 修改密码
   - 修改密保
   - 确认支付方式为"无"
   - 修改账单地址为美国免税州
     - 可通过地址生成器 https://www.dizhishengcheng.com/More/meiguo_zhenshi_dizhi
-    - 在"默认随机(可选)"那里, 从5个免税州AK(Alaska), DE(Delaware), MT(Montana), NH(New Hampshire), OR(Origon)中选择一个, 点击"提交", 回到苹果官网填入刚刚生成的地址
+    - 在"默认随机(可选)"那里, 从5个免税州AK(Alaska), DE(Delaware), MT(Montana), NH(New Hampshire), OR(Origon)中选择一个, 点击"提交"将生成一个随机地址, 回到 Apple 官网填入地址
 - 打开 App Store, 点击右上角头像, 拉到最下面点击"退出登录"
 - 输入你的美区账号登录, 切记不要开启 Two-Factor Authentication, 登录成功后等待界面自动切换成英语
 - 再次点击右上角头像, 在"已购项目"中找到"Shadowrocket", 图标是一个蓝紫色描边的小火箭
 - 访问 https://ducklink.cloud, 注册一个账号 (可用国内邮箱), 邀请码可以不填, 也可以填我的 4vTPLMlt
 - 回到首页, 依次点击"一键订阅 -> iOS -> 导入到 Shadowrocket"
 - 在节点列表中选择一个美国节点后, 滑动最上方的按钮连接, 可点击"连通性测试"查看当前列表各节点的网速
-- 进入下一步"Outlook 邮箱注册"
+- 进入 Step 2 "Outlook 邮箱注册"
 
 ### Step 2. Outlook 邮箱注册 (已有 Gmail/Outlook 邮箱可跳过)
 
@@ -48,12 +53,14 @@
   
 ### Step 3. OpenAI 注册 (GPT 是 OpenAI 旗下的一款产品, 注册 GPT 账号实质上是注册 OpenAI 账号)
 
+#### Windows / MacOS
+
 - 访问 https://chat.openai.com/auth/login
 - 点击"Sign up"
   - 如果你有 Gmail 邮箱, 点击"Continue with Gmail"
   - 如果你是 Outlook 邮箱, 点击"Continue with Microsoft Account"
 - 输入姓名(建议编个外国名字)和出生年月
-- 接下来会要你输入手机号
+- 接下来要求输入国外手机号
 -  
 - 重新打开一个标签页, 访问接码平台 https://sms-activate.org/cn
 - 右上角可切换中文, 先注册该接码平台的账号(可用大陆邮箱)
@@ -66,12 +73,12 @@
 - 选择 United Kingdom
 - 粘贴手机号(注意不要粘贴区号 会重复)
 - 会在下方询问你"Do you have WhatsApp?", 选择 No
-- 回到接码平台查看验证码
-- 回到注册页面输入验证码, 注册成功后会跳转到 GPT 页面
+- 回到接码平台查看验证码 (超过1 分钟收不到验证码直接点击"换一个", 并将 OpenAI 注册页面回退, 重新输入新的英国手机号)
+- 回到注册页面输入验证码, 注册成功会自动跳转到 GPT 页面
 
-### 第三方客户端 (可选)
+### Windows / MacOS 第三方客户端 (可选)
 
-- 在客户端上 GPT 的回答速度略优于网页端, 以下为个人推荐的 Github 上的免费客户端
+- 在 Windows / MacOS 客户端上 GPT 的回答速度略优于浏览器端, 以下为个人推荐的 Github 上的免费客户端
 - Windows:
 - https://github.com/lencx/ChatGPT/releases/download/v1.1.0/ChatGPT_1.1.0_windows_x86_64.msi
 - Mac(M1 M2 芯片):
@@ -119,4 +126,5 @@
 - Advanced data Analysis
 - Plugins
 - DALL·E 3
-   
+
+## 五. Gmail 邮箱注册 (待整理)
