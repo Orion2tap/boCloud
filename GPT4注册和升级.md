@@ -24,7 +24,7 @@
 - 点击右下角的头像, 将 "规则模式" 右滑变为 "全局模式", 点击上方蓝色区域回到原界面
 - 点击 "连接", 进入 Step 2 "Outlook 邮箱注册"
 
-#### iOS 端 (安卓机在公司, 下周测试后更新安卓端)
+#### iOS 端
 
 - 手机或电脑访问 https://store.kxsw.org/
 - 点击 "已购 Shadowrocket 美区账号" (35 rmb)
@@ -139,3 +139,5 @@
 - Advanced data Analysis
 - Plugins
 - DALL·E 3
+
+## 六. 安卓端注册 (安卓机在公司, 下周作者试注册成功后整理)
