@@ -29,13 +29,14 @@
   - 确认支付方式为"无"
   - 修改账单地址为美国免税州
     - 可通过地址生成器 https://www.dizhishengcheng.com/More/meiguo_zhenshi_dizhi
-    - 在"默认随机(可选)"那里, 从5个免税州AK(Alaska), DE(Delaware), MT(Montana), NH(New Hampshire), OR(Origon)中选择一个, 点击"提交", 进入下一步"Outlook 邮箱注册"
+    - 在"默认随机(可选)"那里, 从5个免税州AK(Alaska), DE(Delaware), MT(Montana), NH(New Hampshire), OR(Origon)中选择一个, 点击"提交", 回到苹果官网填入刚刚生成的地址
 - 打开 App Store, 点击右上角头像, 拉到最下面点击"退出登录"
 - 输入你的美区账号登录, 切记不要开启 Two-Factor Authentication, 登录成功后等待界面自动切换成英语
 - 再次点击右上角头像, 在"已购项目"中找到"Shadowrocket", 图标是一个蓝紫色描边的小火箭
 - 访问 https://ducklink.cloud, 注册一个账号 (可用国内邮箱), 邀请码可以不填, 也可以填我的 4vTPLMlt
 - 回到首页, 依次点击"一键订阅 -> iOS -> 导入到 Shadowrocket"
 - 在节点列表中选择一个美国节点后, 滑动最上方的按钮连接, 可点击"连通性测试"查看当前列表各节点的网速
+- 进入下一步"Outlook 邮箱注册"
 
 ### Step 2. Outlook 邮箱注册 (已有 Gmail/Outlook 邮箱可跳过)
 
@@ -109,3 +110,13 @@
 - 输入美区账号登录, 切记不要开启 Two-Factor Authentication, 登录成功后等待界面自动切换成英语
 - 点击右上角头像, 兑换礼品卡, 输入兑换码, 查看余额确认到账, 可先购买一个1美元的愤怒的小鸟用于测试
 - 下载 ChatGPT, 登录 OpenAI 账号, 在设置中点击 GPT plus upgrade -> 订阅 -> 通过余额支付19.99美元
+
+## 三. GPT 提问指南 (待整理)
+
+## 四. GPT4 新特性指南 (待整理)
+
+- Browse with Bing
+- Advanced data Analysis
+- Plugins
+- DALL·E 3
+  
