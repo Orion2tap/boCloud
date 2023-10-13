@@ -119,4 +119,4 @@
 - Advanced data Analysis
 - Plugins
 - DALL·E 3
-  
+   
