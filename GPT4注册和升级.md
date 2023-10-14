@@ -73,7 +73,10 @@
   - 确认支付方式为 "无"
   - 修改账单地址为美国免税州
     - 可通过地址生成器 https://www.dizhishengcheng.com/More/meiguo_zhenshi_dizhi
-    - 在 "默认随机(可选)" 那里, 从5个免税州AK (Alaska), DE (Delaware), MT (Montana), NH (New Hampshire), OR (Origon) 中选择一个, 点击 "提交" 将生成一个随机地址, 回到 Apple 官网填入地址
+      - 在 "默认随机(可选)" 那里
+        - 从 5 个免税州
+        - AK(Alaska), DE(Delaware), MT(Montana), NH(New Hampshire), OR(Origon)
+        - 中选择一个, 点击 "提交" 将生成一个随机地址, 回到 Apple 官网填入地址
 - 打开 App Store, 点击右上角头像, 拉到最下面点击 "退出登录"
 - 输入你的美区账号登录, 它会问你是否开启双重认证, 切记不要开启! 点"其他选项", 让它通过邮箱验证, 登录成功后等待界面自动切换成英语
 - 再次点击右上角头像, 在 "已购项目" 中找到 "Shadowrocket", 外号小火箭
