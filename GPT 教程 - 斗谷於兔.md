@@ -1,6 +1,6 @@
 # GPT 教程 v1.5
 
-- It's not just a technology, it's a revolution
+- **It's not just a technology, it's a revolution**
 -  
 - 后续可能会出视频教程
 - 遇到问题联系作者, 上班摸鱼或下班期间尽量帮你解决
