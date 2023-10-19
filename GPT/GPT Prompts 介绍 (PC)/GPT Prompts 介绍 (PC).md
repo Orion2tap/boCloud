@@ -57,7 +57,7 @@ https://github.com/f/awesome-chatgpt-prompts
   - Sync Custom 从指定 URL 或本地导入
     - 下载地址 https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv
 
-### PromptsPerfect
+### Prompt Perfect
 
 GPT4 的提示优化插件, 每月少量免费配额
 
