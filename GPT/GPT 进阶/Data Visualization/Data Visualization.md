@@ -1,6 +1,6 @@
-# Diagrams
+# Data Visualization
 
-## ChatGPT Diagrams
+## Mermaid
 
     安装 Chrome 扩展 ChatGPT Diagrams, GPT3.5 和 4 可用
 
@@ -37,4 +37,3 @@
   同一图表类型的所有语言
   其他类型的图
 ```
-
