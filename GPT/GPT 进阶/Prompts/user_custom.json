@@ -1,0 +1,23 @@
+[
+  {
+    "cmd": "/java",
+    "act": "分析指定 java 文件",
+    "prompt": "分析该项目内的指定 java 文件, 文件名为:",
+    "enable": true,
+    "tags": []
+  },
+  {
+    "cmd": "WebPilot",
+    "act": "链接读取",
+    "prompt": "使用 WebPilot 插件, 这个网站是关于什么的？网址:",
+    "enable": true,
+    "tags": []
+  },
+  {
+    "cmd": "ShowMe",
+    "act": "数据可视化",
+    "prompt": "使用 Show Me 插件, 给我展示一张解释以下过程的图表:",
+    "enable": true,
+    "tags": []
+  }
+]

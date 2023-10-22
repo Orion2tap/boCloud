@@ -2,29 +2,19 @@
 
 ## Notice
 
+- 插件测评网站 https://www.whatplugin.ai/
 - 插件最多同时启用 3 个
 - 目前主流的插件组合是 WebPilot + 其他插件
-
-## Doc Maker
-
-1. 访问 https://www.aidocmaker.com/
-2. 点击 "Create Doc -> Upload" 上传文档
-3. 将文档链接发送给 GPT4
-https://storage.googleapis.com/paint_public/uploads/f659e920031041a8a9d4a6bc1dbe7211.pdf
-
-## CoderPad
-
-## Ai PDF
-
-## Noteable
+- 以下每个插件作者给出对应的 prompts 示例
+  - 不了解请先阅读 prompts 部分
 
 ## Diagrams: Show Me [数据可视化]
 
-- /show_me
+- /ShowMe
 - 使用 Show Me 插件, 给我展示一张解释以下过程的图表:
 
-## WebPilot
+## WebPilot [链接读取]
 
-## LinkReader
-
-## Wolfram
+- 每周 50 条免费配额
+- /WebPilot
+- 使用 WebPilot 插件, 这个网站是关于什么的？网址:
