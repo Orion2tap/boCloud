@@ -7,6 +7,11 @@
 
 ## Doc Maker
 
+1. 访问 https://www.aidocmaker.com/
+2. 点击 "Create Doc -> Upload" 上传文档
+3. 将文档链接发送给 GPT4
+https://storage.googleapis.com/paint_public/uploads/f659e920031041a8a9d4a6bc1dbe7211.pdf
+
 ## CoderPad
 
 ## Ai PDF
