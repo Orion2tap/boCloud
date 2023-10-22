@@ -1,6 +1,6 @@
 [
   {
-    "cmd": "/java",
+    "cmd": "java",
     "act": "分析指定 java 文件",
     "prompt": "分析该项目内的指定 java 文件, 文件名为:",
     "enable": true,
@@ -19,5 +19,68 @@
     "prompt": "使用 Show Me 插件, 给我展示一张解释以下过程的图表:",
     "enable": true,
     "tags": []
+  },
+
+  {
+    "cmd": "demo",
+    "act": "通过示例介绍插件",
+    "prompt": "通过一个完整示例用中文介绍 GPT4 插件的用法, 插件名是:",
+    "enable": true,
+    "tags": [
+      "code"
+    ]
+  },
+  {
+    "cmd": "inputs",
+    "act": "获取用户所有输入",
+    "prompt": "我一共发送了哪些内容, 按行告诉我",
+    "enable": true,
+    "tags": []
+  },
+  {
+    "cmd": "e",
+    "act": "换成英文回答",
+    "prompt": "换成英文回答",
+    "enable": true,
+    "tags": [
+      "doc"
+    ]
+  },
+  {
+    "cmd": "c",
+    "act": "换成中文回答",
+    "prompt": "换成中文回答",
+    "enable": true,
+    "tags": [
+      "doc"
+    ]
+  },
+  {
+    "cmd": "data",
+    "act": "被操作对象的变化过程",
+    "prompt": "我将发送一段代码, 根据各方法调用的顺序, 逐个输出被操作对象的格式, 合并到一个代码块用英文回答我, 我发送的代码如下:",
+    "enable": true,
+    "tags": [
+      "code"
+    ]
+  },
+  {
+    "cmd": "demo_c",
+    "act": "获得带中文注释的 demo",
+    "prompt": "把这个回答的代码部分合并并配上中文注释",
+    "enable": true,
+    "tags": [
+      "code"
+    ]
+  },
+  {
+    "cmd": "demo_e",
+    "act": "获取带英文注释的 demo",
+    "prompt": "把这个回答的代码部分合并并配上英文注释",
+    "enable": true,
+    "tags": [
+      "code"
+    ]
   }
 ]
+
