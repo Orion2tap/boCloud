@@ -1,33 +1,33 @@
 # 以下机场不推荐用 QQ 邮箱注册
 
 名称: 火麒麟
-https://www.okyrin.com/ [需翻墙注册]
+ac.okyrin.com [可直接注册]
 [最低 5rmb/月 流量50G]
 
 名称: 泡泡Dog
-https://iepl.io/ [可直接注册]
+iepl.io [可直接注册]
 [最低 8.8rmb/月 流量70G]
 
 名称: COO
-https://web.coo.wiki/ [可直接注册]
+web.coo.wiki [可直接注册]
 [最低 9.9rmb/月 流量300G, 限速 300 Mbps]
 
 名称: 次元云
-https://ciyy.cc/ [可直接注册]
+ciyy.cc [可直接注册]
 [最低 10rmb/月 流量128G]
 
 名称: OuO
-https://board.ouonet.work/  [需翻墙注册]
+board.ouonet.work  [需翻墙注册]
 [最低 10rmb/月 流量100G]
 
 名称: CoffeeCloud
-https://portal.coffeecloud.top/ [需翻墙注册]
+portal.coffeecloud.top [需翻墙注册]
 [最低 10rmb/月 流量130G]
 
 名称: 卡荔云
-https://portal.karleynetwork.shop/ [需翻墙注册]
+portal.karleynetwork.shop [需翻墙注册]
 [最低 10rmb/月 流量150G 限速 2Gbps+]
 
 名称: Selom
-https://www.selom.xyz/ [需翻墙注册]
+selom.xyz [需翻墙注册]
 [最低 10rmb/月 流量160G]
