@@ -1,8 +1,8 @@
 # 以下机场不推荐用 QQ 邮箱注册
 
 名称: 火麒麟
-ac.okyrin.com [可直接注册]
-[最低 5rmb/月 流量50G]
+okyrin.com [可直接注册]
+[最低 2rmb/月 流量12G]
 
 名称: 泡泡Dog
 iepl.io [可直接注册]
