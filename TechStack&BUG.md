@@ -49,8 +49,7 @@ POJO（plain ordinary java object）
         VO（value object）
         # 值对象/视图对象，后端 Controller 的返回值, 返回给前端的数据对象
         DTO（Data Transfer Object）
-        # 版本1 后端 Controller 内定义的 Java 对象
-        # 版本2 前端通过 AJAX 请求的数据 (可简单理解为 JSON)
+        # 后端 Controller 内定义的 Java 对象, 用于项目内跨层传输
         BO（business objectr）
         # 业务对象, 根据具体的业务场景封装的对象, PO + PO + PO = BO, 钉子 + 锤子 + 钳子 = 工具箱
         DO（Domain Object）
