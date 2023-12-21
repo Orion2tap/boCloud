@@ -5,8 +5,6 @@
     - [自底向上实现](#自底向上实现)
     - [层次](#层次)
   - [POJO(VO DTO BO/DO PO) + DAO](#pojovo-dto-bodo-po--dao)
-  - [@AllArgsConstructor 导致 @Value 取不到值](#allargsconstructor-导致-value-取不到值)
-  - [kotlin 版本不一致](#kotlin-版本不一致)
 
 ## 最小化可行产品 MVP Minimum Viable Product
 
@@ -58,27 +56,4 @@ POJO（plain ordinary java object）
         # 持久对象, 对应数据库中某个表中的一条记录
 DAO（data access object）
 # 数据访问对象, 对应数据库的 Mapper
-```
-
-## @AllArgsConstructor 导致 @Value 取不到值
-
-```bash
-# fast-app modules/user/rest/UserController.java
-
-# 使用 @RequiredArgsConstructor(onConstructor = @__(@Autowired)) 替代 @AllArgsConstructor 可以解决 @Value 无法取到值的问题，是因为它的工作原理略有不同。
-
-@AllArgsConstructor
-# 这个注解会生成一个包含所有字段的构造函数，但它不会自动添加 @Autowired 注解。在这种情况下，如果你在类中使用 @Value 来注入值，可能会遇到取不到值的问题。因为 @Value 注解是由 Spring 在运行时进行处理的，而 Lombok 生成的构造函数不会包含这方面的处理逻辑。
-
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
-# 这个注解的作用是生成一个包含所有 final 字段的构造函数，并在构造函数的参数上自动添加 @Autowired 注解。这意味着，使用这个注解生成的构造函数可以正确地进行依赖注入。因此，你可以在这个构造函数中正常使用 @Value 注解来获取配置值。
-
-# 总结
-# @RequiredArgsConstructor(onConstructor = @__(@Autowired)) 提供了一种更加集成地方式来处理依赖注入，它会在构造函数中自动添加 @Autowired 注解，从而保证依赖注入的正常进行，包括了使用 @Value 注解来获取配置值。
-```
-
-## kotlin 版本不一致
-
-```bash
-# idea -> build -> rebuild project
 ```
