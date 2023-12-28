@@ -1,4 +1,5 @@
 # 目录
+
 1. 基础
     - 特点
     - 结构
@@ -17,9 +18,10 @@
 4. 参考链接
 
 ## 1. 基础
-![structure](https://github.com/liubobo1996/boboWeb/raw/master/MyPic/Collection/HashMap/structure.jpg)
+![structure](https://github.com/Orion2tap/boCloud/blob/main/MyPic/Collection/HashMap/structure.jpg?raw=true)
 
 #### 特点
+
 1. key-value 结构, 数据类型不限制
 2. 根据 key 计算 hash 值进而计算索引, 根据索引存储 Node<K,V>
 3. 计算结果的无序性导致了元素存储的无序性
@@ -38,9 +40,11 @@
     - 扩大 table 容量
 
 #### 结构
+
 1. 底层是一个由桶组成的数组, 名为 table, 默认初始容量 16
 2. 根据 key 计算 hash 值进而计算索引
 3. 数组内每个桶的 key 存放索引, value 存放一个 Node<k1, v1>, 它的 next 指向下一个 Node<k2, v2>
+
 ```java
 static class Node<K,V> implements Map.Entry<K,V> {
         final int hash;
@@ -50,6 +54,7 @@ static class Node<K,V> implements Map.Entry<K,V> {
         ...
 }   
 ```
+
 4. hash 碰撞 (计算的 hash 值相同), 通过 equals 判断是否存在相同的 key
     - 存在则覆盖该 key 的 value
     - 不存在则 Node<k1, v1> 指向 Node<k2, v2>, 链表长度变为 2
@@ -58,6 +63,7 @@ static class Node<K,V> implements Map.Entry<K,V> {
     - 数据量 ≥ 64, 链表转化为红黑树, 链表长度 < 6 红黑树退化为链表
 
 #### 重要字段
+
 1. size
     - 已存储的数据量, 即 Node 的总数
 2. loadFactor
@@ -69,6 +75,7 @@ static class Node<K,V> implements Map.Entry<K,V> {
 ---
 ## 2. 场景
 #### 构造函数
+
 ```java
 // 一共 4 个构造函数, 以第 1 个构造函数为例
 HashMap(int, float)
@@ -92,6 +99,7 @@ this.threshold = tableSizeFor(initialCapacity);
 ```
 
 #### 初始化
+
 ```bash
 # 第一次 put 元素时初始化
 # 计算实际容量, threshold 被重新赋值
@@ -101,6 +109,7 @@ threshold = threshold * loadFactor
 ```
 
 #### 扩容
+
 ```bash
 # 扩容的三种场景
 1. table 为空或其长度为 0
@@ -113,11 +122,14 @@ table length 变为最大容量(threshold 的旧值)的 2 倍
 ---
 ## 3. 关键方法分析
 #### tableSizeFor(int cap)
+
 1. 暴力方法实现的 tableSizeFor
+
 ```
 涉及对数、除、取整，强制类型转换、指数五种高级运算, 必然需要大量底层操作, 严重降低性能
 cap 即输入的初始容量 initialCapacity
 ```
+
 ```
 public static int fun(int cap) {
         // 取对数
@@ -128,7 +140,9 @@ public static int fun(int cap) {
         return (int) Math.pow(2, m2);
 }
 ```
+
 2. HashMap 作者通过位运算实现的 tableSizeFor
+
 ```
 static final int tableSizeFor(int cap) {
         // 如果不 减 1, 输入 32 会返回 64, 而 32 本身就是 2 的幂次方, 符合要求
@@ -145,13 +159,16 @@ static final int tableSizeFor(int cap) {
         return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
 }
 ```
-![tableSizeFor](https://github.com/liubobo1996/boboWeb/raw/master/MyPic/Collection/HashMap/tableSizeFor.png)
+
+![tableSizeFor](https://github.com/Orion2tap/boCloud/blob/main/MyPic/Collection/HashMap/tableSizeFor.png?raw=true)
 
 3. 移位思想
+
 ```
 求大于 5 且最接近 5 的 2 的幂次方 (8)
 二进制下体现为最高位的前一位变 1, 后面位全变 0
 ```
+
 ```
 十进制 5       0000 0101
                   ↓
@@ -159,7 +176,9 @@ static final int tableSizeFor(int cap) {
                   ↓
 加 1 得到      0000 1000    十进制 8
 ```
+
 4. 作者思路
+
 ```
 先移位，再或运算
 右移 1 位，再或运算，就有 2 位变为 1 (最高位和最高位后面的一位)
@@ -167,6 +186,7 @@ static final int tableSizeFor(int cap) {
 ...
 最后右移 16 位再或运算，保证 32 位的 int 类型整数最高有效位之后的位都能变为 1
 ```
+
 ```
 原始值   00001xxx xxxxxxxx xxxxxxxx xxxxxxxx [共32位]
 右移1位  000001xx xxxxxxxx xxxxxxxx xxxxxxxx
@@ -181,29 +201,37 @@ static final int tableSizeFor(int cap) {
 或运算   00001111 11111111 11111111 11111111
 结果加1  00010000 00000000 00000000 00000000
 ```
+
 ```
 不管该 32 位原始值多大，都能将其转换，只是值较小时，可能多做几次无意义操作
 这个方法之所以高效，是因为移位运算和或运算都属于比较底层的操作
 ```
 
 #### hash(Object key)
+
 1. hash()
+
 ```
 static final int hash(Object key) {
     int h;    
     return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
 }
 ```
+
 2. hashCode()
+
 ```
 s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1]
 s[i] 是字符串的第 i 个字符的 ASCII 码，n 是字符串的长度，^ 表示求幂。空字符串的哈希值为 0。
 ```
+
 3. 将 hashCode 右移 16位后与原值进行异或运算
+
 ```
 这样做是从速度、质量等多方面综合考虑的，而且将高位和低位进行混合运算，这样是可以有效降低冲突概率的。
 另外，高位是可以保证不变的，变的是低位，并且低位中掺杂了高位的信息，最后生成的 hash 值的随机性会增大。
 ```
+
 ```
 467,926,597                         // hashCode
 00011011 11100011 11111110 01000101 // hashCode (bin)
@@ -212,21 +240,27 @@ s[i] 是字符串的第 i 个字符的 ASCII 码，n 是字符串的长度，^ �
 ```
 
 #### indexFor(int hash, int length)
+
 1. 暴力方法计算索引 i
+
 ```
 // 相对于位运算更消耗性能
 hash % length
 ```
+
 2. HashMap 作者通过位运算计算索引 i
+
 ```
 // jdk1.7 的源码，jdk1.8 没有这个方法，但是原理一样
 static int indexFor(int hash, int length) {  
     return hash & (length-1);
 }   
 ```
-![indexFor](https://github.com/liubobo1996/boboWeb/raw/master/MyPic/Collection/HashMap/indexFor.png)
+
+![indexFor](https://github.com/Orion2tap/boCloud/blob/main/MyPic/Collection/HashMap/indexFor.png?raw=true)
 
 #### resize()
+
 ```
 扩容后新索引的计算
     oldCap = 16 扩容到 newCap = 32
@@ -236,12 +270,15 @@ static int indexFor(int hash, int length) {
 ```
 
 #### put(K key, V value)
+
 ```
 此处介绍的是 putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict), 因为 put() 其实就是直接调用的 putVal()
 ```
-![put](https://github.com/liubobo1996/boboWeb/raw/master/MyPic/Collection/HashMap/put.png)
+
+![put](https://github.com/Orion2tap/boCloud/blob/main/MyPic/Collection/HashMap/put.png?raw=true)
 
 #### get(Object key)
+
 ```
 此处介绍的是 getNode(int hash, Object key), 因为 get() 其实就是直接调用的 getNode()
 
@@ -253,6 +290,7 @@ static int indexFor(int hash, int length) {
 
 ---
 ## 4. 参考链接
+
 1. [详解 HashMap 数据结构](https://juejin.cn/post/6844904111817637901)
 2. [tableSizeFor 方法图解](https://segmentfault.com/a/1190000039392972)
 3. [HashMap 常用方法测试](https://javaguide.cn/java/collection/hashmap-source-code.html#hashmap-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E6%B5%8B%E8%AF%95)
