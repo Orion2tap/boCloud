@@ -1,0 +1,1290 @@
+#---------------------------------------------------#
+## 更新：2023-11-15 11:44:49
+## 感谢：https://github.com/Hackl0us/SS-Rule-Snippet
+## 链接：https://link.oness.xyz/link/QbKaRGamIzdsP31l?clash=1
+#---------------------------------------------------#
+
+# HTTP 代理端口
+port: 7890 
+
+# SOCKS5 代理端口
+socks-port: 7891 
+
+# Linux 和 macOS 的 redir 代理端口
+redir-port: 7892 
+
+# 允许局域网的连接
+allow-lan: true
+
+# 规则模式：Rule（规则） / Global（全局代理）/ Direct（全局直连）
+mode: Rule
+
+# 设置日志输出级别 (默认级别：silent，即不输出任何内容，以避免因日志内容过大而导致程序内存溢出）。
+# 5 个级别：silent / info / warning / error / debug。级别越高日志输出量越大，越倾向于调试，若需要请自行开启。
+log-level: silent
+# Clash 的 RESTful API
+external-controller: '0.0.0.0:9090'
+
+# RESTful API 的口令
+secret: '' 
+
+# 您可以将静态网页资源（如 clash-dashboard）放置在一个目录中，clash 将会服务于 `RESTful API/ui`
+# 参数应填写配置目录的相对路径或绝对路径。
+# external-ui: folder
+
+dns:
+    enable: false
+    ipv6: false
+    #default-nameserver: [223.5.5.5, 119.29.29.29]
+    enhanced-mode: fake-ip
+    fake-ip-range: 198.18.0.1/16
+    use-hosts: true
+    nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
+    fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
+    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
+    
+
+proxies:
+  - {"name":" [V2ray] 广州香港-3.NF","type":"vmess","server":"node1.onezz.top","port":20009,"uuid":"5676f871-9222-3e00-af13-f5c8a6ee0f7d","alterId":0,"cipher":"auto","udp":true,"network":"ws","ws-path":"/chat","ws-headers":{"Host":"microsoft.com"},"ws-opts":{"path":"/chat","headers":{"Host":"microsoft.com"}}}
+  - {"name":"[V2ray] 印度","type":"vmess","server":"node2.onezz.top","port":22024,"uuid":"5676f871-9222-3e00-af13-f5c8a6ee0f7d","alterId":0,"cipher":"auto","udp":true,"network":"ws","ws-path":"/chat","ws-headers":{"Host":"microsoft.com"},"ws-opts":{"path":"/chat","headers":{"Host":"microsoft.com"}}}
+  - {"name":"[V2ray] 德国","type":"vmess","server":"node2.onezz.top","port":22023,"uuid":"5676f871-9222-3e00-af13-f5c8a6ee0f7d","alterId":0,"cipher":"auto","udp":true,"network":"ws","ws-path":"/chat","ws-headers":{"Host":"microsoft.com"},"ws-opts":{"path":"/chat","headers":{"Host":"microsoft.com"}}}
+  - {"name":"[V2ray] 新加坡-1","type":"vmess","server":"node2.onezz.top","port":22017,"uuid":"5676f871-9222-3e00-af13-f5c8a6ee0f7d","alterId":0,"cipher":"auto","udp":true,"network":"ws","ws-path":"/chat","ws-headers":{"Host":"microsoft.com"},"ws-opts":{"path":"/chat","headers":{"Host":"microsoft.com"}}}
+  - {"name":"[V2ray] 新加坡-2","type":"vmess","server":"node2.onezz.top","port":22018,"uuid":"5676f871-9222-3e00-af13-f5c8a6ee0f7d","alterId":0,"cipher":"auto","udp":true,"network":"ws","ws-path":"/chat","ws-headers":{"Host":"microsoft.com"},"ws-opts":{"path":"/chat","headers":{"Host":"microsoft.com"}}}
+  - {"name":"[V2ray] 新加坡-3","type":"vmess","server":"node2.onezz.top","port":22019,"uuid":"5676f871-9222-3e00-af13-f5c8a6ee0f7d","alterId":0,"cipher":"auto","udp":true,"network":"ws","ws-path":"/chat","ws-headers":{"Host":"microsoft.com"},"ws-opts":{"path":"/chat","headers":{"Host":"microsoft.com"}}}
+  - {"name":"[V2ray] 日本-1","type":"vmess","server":"node2.onezz.top","port":22013,"uuid":"5676f871-9222-3e00-af13-f5c8a6ee0f7d","alterId":0,"cipher":"auto","udp":true,"network":"ws","ws-path":"/chat","ws-headers":{"Host":"microsoft.com"},"ws-opts":{"path":"/chat","headers":{"Host":"microsoft.com"}}}
+  - {"name":"[V2ray] 美国奈飞-1","type":"vmess","server":"node2.onezz.top","port":30000,"uuid":"5676f871-9222-3e00-af13-f5c8a6ee0f7d","alterId":0,"cipher":"auto","udp":true,"network":"ws","ws-path":"/chat","ws-headers":{"Host":"microsoft.com"},"ws-opts":{"path":"/chat","headers":{"Host":"microsoft.com"}}}
+  - {"name":"[V2ray] 英国","type":"vmess","server":"node2.onezz.top","port":22025,"uuid":"5676f871-9222-3e00-af13-f5c8a6ee0f7d","alterId":0,"cipher":"auto","udp":true,"network":"ws","ws-path":"/chat","ws-headers":{"Host":"microsoft.com"},"ws-opts":{"path":"/chat","headers":{"Host":"microsoft.com"}}}
+  - {"name":"[V2ray] 香港IEPL.限速10M","type":"vmess","server":"node2.onezz.top","port":22020,"uuid":"5676f871-9222-3e00-af13-f5c8a6ee0f7d","alterId":0,"cipher":"auto","udp":true,"network":"ws","ws-path":"/chat","ws-headers":{"Host":"microsoft.com"},"ws-opts":{"path":"/chat","headers":{"Host":"microsoft.com"}}}
+  - {"name":"[V2ray]台湾-2","type":"vmess","server":"node2.onezz.top","port":40002,"uuid":"5676f871-9222-3e00-af13-f5c8a6ee0f7d","alterId":0,"cipher":"auto","udp":true,"network":"ws","ws-path":"/chat","ws-headers":{"Host":"microsoft.com"},"ws-opts":{"path":"/chat","headers":{"Host":"microsoft.com"}}}
+  - {"name":"公告2:客服onessme2@outlook.com","type":"vmess","server":"www.onesy.top","port":443,"uuid":"5676f871-9222-3e00-af13-f5c8a6ee0f7d","alterId":0,"cipher":"auto","udp":true,"network":"ws","ws-path":"/chat","ws-headers":{"Host":"microsoft.com"},"ws-opts":{"path":"/chat","headers":{"Host":"microsoft.com"}}}
+  - {"name":"公告:连不上请换节点!官网onesy.cc","type":"vmess","server":"www.onesy.top","port":443,"uuid":"5676f871-9222-3e00-af13-f5c8a6ee0f7d","alterId":0,"cipher":"auto","udp":true,"network":"ws","ws-path":"/chat","ws-headers":{"Host":"microsoft.com"},"ws-opts":{"path":"/chat","headers":{"Host":"microsoft.com"}}}
+
+proxy-groups:
+-
+  name: 节点选择
+  type: select
+  proxies:
+    - ' [V2ray] 广州香港-3.NF'
+    - '[V2ray] 印度'
+    - '[V2ray] 德国'
+    - '[V2ray] 新加坡-1'
+    - '[V2ray] 新加坡-2'
+    - '[V2ray] 新加坡-3'
+    - '[V2ray] 日本-1'
+    - '[V2ray] 美国奈飞-1'
+    - '[V2ray] 英国'
+    - '[V2ray] 香港IEPL.限速10M'
+    - '[V2ray]台湾-2'
+    - '公告2:客服onessme2@outlook.com'
+    - '公告:连不上请换节点!官网onesy.cc'
+-
+  name: Netflix
+  type: select
+  proxies:
+    - 节点选择
+-
+  name: AbemaTV
+  type: select
+  proxies:
+    - 节点选择
+-
+  name: 国内网站
+  type: select
+  proxies:
+    - 不走代理
+    - 节点选择
+-
+  name: B站港澳台
+  type: select
+  proxies:
+    - 不走代理
+    - ' [V2ray] 广州香港-3.NF'
+    - '[V2ray] 香港IEPL.限速10M'
+    - '[V2ray]台湾-2'
+-
+  name: 视频网站
+  type: select
+  proxies:
+    - 节点选择
+-
+  name: Epic|UPlay|Steam|EA
+  type: select
+  proxies:
+    - 节点选择
+    - 不走代理
+-
+  name: ChatGPT
+  type: select
+  proxies:
+    - 节点选择
+    - ' [V2ray] 广州香港-3.NF'
+    - '[V2ray] 印度'
+    - '[V2ray] 德国'
+    - '[V2ray] 新加坡-1'
+    - '[V2ray] 新加坡-2'
+    - '[V2ray] 新加坡-3'
+    - '[V2ray] 日本-1'
+    - '[V2ray] 美国奈飞-1'
+    - '[V2ray] 英国'
+    - '[V2ray] 香港IEPL.限速10M'
+    - '[V2ray]台湾-2'
+-
+  name: 其他网站
+  type: select
+  proxies:
+    - 节点选择
+    - 不走代理
+-
+  name: 不走代理
+  type: select
+  proxies:
+    - DIRECT
+
+
+# 规则
+rules:
+# anti-ads
+- DOMAIN-KEYWORD,adservice,REJECT
+- DOMAIN-SUFFIX,adcolony.com,REJECT
+- DOMAIN-SUFFIX,adinall.com,REJECT
+- DOMAIN-SUFFIX,admaster.com.cn,REJECT
+- DOMAIN-SUFFIX,admob.com,REJECT
+- DOMAIN-SUFFIX,adnxs.com,REJECT
+- DOMAIN-SUFFIX,adnyg.com,REJECT
+- DOMAIN-SUFFIX,adsensor.org,REJECT
+- DOMAIN-SUFFIX,adsymptotic.com,REJECT
+- DOMAIN-SUFFIX,adthor.com,REJECT
+- DOMAIN-SUFFIX,adwhirl.com,REJECT
+- DOMAIN-SUFFIX,amazon-adsystem.com,REJECT
+- DOMAIN-SUFFIX,amobee.com,REJECT
+- DOMAIN-SUFFIX,app-adforce.jp,REJECT
+- DOMAIN-SUFFIX,appads.com,REJECT
+- DOMAIN-SUFFIX,appcpi.net,REJECT
+- DOMAIN-SUFFIX,appier.net,REJECT
+- DOMAIN-SUFFIX,applift.com,REJECT
+- DOMAIN-SUFFIX,applovin.com,REJECT
+- DOMAIN-SUFFIX,applvn.com,REJECT
+- DOMAIN-SUFFIX,apsalar.com,REJECT
+- DOMAIN-SUFFIX,apxadtracking.net,REJECT
+- DOMAIN-SUFFIX,axonix.com,REJECT
+- DOMAIN-SUFFIX,bayimob.com,REJECT
+- DOMAIN-SUFFIX,bjvvqu.cn,REJECT
+- DOMAIN-SUFFIX,bulldogcpi.com,REJECT
+- DOMAIN-SUFFIX,clotfun.mobi,REJECT
+- DOMAIN-SUFFIX,clotfun.online,REJECT
+- DOMAIN-SUFFIX,cloudmobi.net,REJECT
+- DOMAIN-SUFFIX,crwdcntrl.net,REJECT
+- DOMAIN-SUFFIX,ctrmi.com,REJECT
+- DOMAIN-SUFFIX,exosrv.com,REJECT
+- DOMAIN-SUFFIX,go2cloud.org,REJECT
+- DOMAIN-SUFFIX,growingio.com,REJECT
+- DOMAIN-SUFFIX,haloapps.com,REJECT
+- DOMAIN-SUFFIX,hypers.com,REJECT
+- DOMAIN-SUFFIX,idealads.net,REJECT
+- DOMAIN-SUFFIX,inmobi.cn,REJECT
+- DOMAIN-SUFFIX,inmobi.com,REJECT
+- DOMAIN-SUFFIX,inmobi.net,REJECT
+- DOMAIN-SUFFIX,inmobicdn.cn,REJECT
+- DOMAIN-SUFFIX,inmobicdn.net,REJECT
+- DOMAIN-SUFFIX,inner-active.mobi,REJECT
+- DOMAIN-SUFFIX,insurads.com,REJECT
+- DOMAIN-SUFFIX,ironsrc.com,REJECT
+- DOMAIN-SUFFIX,irs01.com,REJECT
+- DOMAIN-SUFFIX,iskyworker.com,REJECT
+- DOMAIN-SUFFIX,juicyads.com,REJECT
+- DOMAIN-SUFFIX,kochava.com,REJECT
+- DOMAIN-SUFFIX,leadboltmobile.net,REJECT
+- DOMAIN-SUFFIX,lenzmx.com,REJECT
+- DOMAIN-SUFFIX,liveadvert.com,REJECT
+- DOMAIN-SUFFIX,lnk0.com,REJECT
+- DOMAIN-SUFFIX,lnk8.cn,REJECT
+- DOMAIN-SUFFIX,localytics.com,REJECT
+- DOMAIN-SUFFIX,mdfull.com,REJECT
+- DOMAIN-SUFFIX,measurementapi.com,REJECT
+- DOMAIN-SUFFIX,medialytics.com,REJECT
+- DOMAIN-SUFFIX,meetrics.com,REJECT
+- DOMAIN-SUFFIX,meetrics.net,REJECT
+- DOMAIN-SUFFIX,miaozhen.com,REJECT
+- DOMAIN-SUFFIX,mmstat.com,REJECT
+- DOMAIN-SUFFIX,moatads.com,REJECT
+- DOMAIN-SUFFIX,mobclix.com,REJECT
+- DOMAIN-SUFFIX,mopub.com,REJECT
+- DOMAIN-SUFFIX,okjhb.xyz,REJECT
+- DOMAIN-SUFFIX,openx.net,REJECT
+- DOMAIN-SUFFIX,outbrain.com,REJECT
+- DOMAIN-SUFFIX,pubmatic.com,REJECT
+- DOMAIN-SUFFIX,qchannel01.cn,REJECT
+- DOMAIN-SUFFIX,rayjump.com,REJECT
+- DOMAIN-SUFFIX,rtbasia.com,REJECT
+- DOMAIN-SUFFIX,rubiconproject.com,REJECT
+- DOMAIN-SUFFIX,scorecardresearch.com,REJECT
+- DOMAIN-SUFFIX,sdkclick.com,REJECT
+- DOMAIN-SUFFIX,shuzilm.cn,REJECT
+- DOMAIN-SUFFIX,smaato.net,REJECT
+- DOMAIN-SUFFIX,smartadserver.com,REJECT
+- DOMAIN-SUFFIX,smartnews-ads.com,REJECT
+- DOMAIN-SUFFIX,supersonic.com,REJECT
+- DOMAIN-SUFFIX,supersonicads.com,REJECT
+- DOMAIN-SUFFIX,tagtic.cn,REJECT
+- DOMAIN-SUFFIX,tanv.com,REJECT
+- DOMAIN-SUFFIX,tanx.com,REJECT
+- DOMAIN-SUFFIX,tapjoy.com,REJECT
+- DOMAIN-SUFFIX,trafficjunky.net,REJECT
+- DOMAIN-SUFFIX,turn.com,REJECT
+- DOMAIN-SUFFIX,uri6.com,REJECT
+- DOMAIN-SUFFIX,vidoomy.com,REJECT
+- DOMAIN-SUFFIX,vungle.com,REJECT
+- DOMAIN-SUFFIX,wedolook.com,REJECT
+- DOMAIN-SUFFIX,xdrig.com,REJECT
+- DOMAIN-SUFFIX,yumimobi.com,REJECT
+- DOMAIN-SUFFIX,zu08e.cn,REJECT
+- DOMAIN-SUFFIX,ad.cmvideo.cn,REJECT
+- DOMAIN-SUFFIX,ad.daum.net,REJECT
+- DOMAIN,abema-adx.ameba.jp,REJECT
+- DOMAIN,ad.12306.cn,REJECT
+- DOMAIN,ad.360in.com,REJECT
+- DOMAIN,ad.51wnl-cq.com,REJECT
+- DOMAIN,ad.caiyunapp.com,REJECT
+- DOMAIN,ad.huajiao.com,REJECT
+- DOMAIN,ad.hzyoka.com,REJECT
+- DOMAIN,ad.jiemian.com,REJECT
+- DOMAIN,ad.qingting.fm,REJECT
+- DOMAIN,ad.wappalyzer.com,REJECT
+- DOMAIN,ad-cn.jovcloud.com,REJECT
+- DOMAIN,adextra.51wnl-cq.com,REJECT
+- DOMAIN,api.adnet.mob.com,REJECT
+- DOMAIN,ads.adadapted.com,REJECT
+- DOMAIN,ads.chinadaily.com.cn,REJECT
+- DOMAIN,ads.daydaycook.com.cn,REJECT
+- DOMAIN,ads.weilitoutiao.net,REJECT
+- DOMAIN,adsapi.manhuaren.com,REJECT
+- DOMAIN,adsdk.dmzj.com,REJECT
+- DOMAIN,adserver.pandora.com,REJECT
+- DOMAIN,adshow.58.com,REJECT
+- DOMAIN,adui.tg.meitu.com,REJECT
+- DOMAIN,adv.bandi.so,REJECT
+- DOMAIN,app-ad.variflight.com,REJECT
+- DOMAIN,appnext.hs.llnwd.net,REJECT
+- DOMAIN,appnext-a.akamaihd.net,REJECT
+- DOMAIN,ggs.myzaker.com,REJECT
+- DOMAIN,itad.linetv.tw,REJECT
+- DOMAIN,ja.chushou.tv,REJECT
+- DOMAIN,mads.suning.com,REJECT
+- DOMAIN,mobileads.msn.com,REJECT
+- DOMAIN,mopnativeadv.037201.com,REJECT
+- DOMAIN,nativeadv.dftoutiao.com,REJECT
+- DOMAIN-SUFFIX,iadsdk.apple.com,REJECT
+- DOMAIN-SUFFIX,ads.internal.unity3d.com,REJECT
+- DOMAIN-SUFFIX,ads.prd.ie.internal.unity3d.com,REJECT
+- DOMAIN-SUFFIX,unityads.unity3d.com,REJECT
+- DOMAIN,optimus-ads.amap.com,REJECT
+- DOMAIN,optimus-ads.amap.com.w.alikunlun.com,REJECT
+- DOMAIN,tunion-api.m.taobao.com,REJECT
+- DOMAIN,adproxy.autohome.com.cn,REJECT
+- DOMAIN,rd.autohome.com.cn,REJECT
+- DOMAIN,al.autohome.com.cn,REJECT
+- DOMAIN,applogapi.autohome.com.cn,REJECT
+- DOMAIN-SUFFIX,cpro.baidu.com,REJECT
+- DOMAIN-SUFFIX,pos.baidu.com,REJECT
+- DOMAIN,afd.baidu.com,REJECT
+- DOMAIN,als.baidu.com,REJECT
+- DOMAIN,duclick.baidu.com,REJECT
+- DOMAIN,mobads.baidu.com,REJECT
+- DOMAIN,mobads-logs.baidu.com,REJECT
+- DOMAIN,nsclick.baidu.com,REJECT
+- DOMAIN,ad.toutiao.com,REJECT
+- DOMAIN,adx.yiche.com,REJECT
+- DOMAIN,log.ycapp.yiche.com,REJECT
+- DOMAIN,advertise.baicizhan.com,REJECT
+- DOMAIN,advertise.baicizhan.org,REJECT
+- DOMAIN,galaxy.bjcathay.com,REJECT
+- DOMAIN,mdrecv.app.cntvwb.cn,REJECT
+- DOMAIN,sdapprecv.app.cntvwb.cn,REJECT
+- DOMAIN,vdapprecv.app.cntvwb.cn,REJECT
+- DOMAIN,ad.21cn.com,REJECT
+- DOMAIN,ad.k.21cn.com,REJECT
+- DOMAIN,admarket.21cn.com,REJECT
+- DOMAIN,adshows.21cn.com,REJECT
+- DOMAIN,atrace.chelaile.net.cn,REJECT
+- DOMAIN,logs.chelaile.net.cn,REJECT
+- DOMAIN-SUFFIX,doubleclick.net,REJECT
+- DOMAIN-SUFFIX,googleadservices.com,REJECT
+- DOMAIN-SUFFIX,googleadsserving.cn,REJECT
+- DOMAIN-SUFFIX,googlesyndication.com,REJECT
+- DOMAIN-SUFFIX,da.mgtv.com,REJECT
+- DOMAIN-SUFFIX,da.hunantv.com,REJECT
+- DOMAIN,adx.hupu.com,REJECT
+- DOMAIN,adx-api.hupu.com,REJECT
+- DOMAIN,goblin.hupu.com,REJECT
+- DOMAIN,t7z.cupid.iqiyi.com,REJECT
+- IP-CIDR,101.227.97.240/32,REJECT,no-resolve
+- IP-CIDR,101.227.200.11/32,REJECT,no-resolve
+- IP-CIDR,101.227.200.28/32,REJECT,no-resolve
+- IP-CIDR,124.192.153.42/32,REJECT,no-resolve
+- DOMAIN-SUFFIX,deliver.ifeng.com,REJECT
+- DOMAIN,api.newad.ifeng.com,REJECT
+- DOMAIN,ifengad.3g.ifeng.com,REJECT
+- DOMAIN,adserviceretry.kugou.com,REJECT
+- DOMAIN,ads.service.kugou.com,REJECT
+- DOMAIN,adsfile.bssdlbig.kugou.com,REJECT
+- DOMAIN,g.koowo.com,REJECT
+- DOMAIN,kgmobilestat.kugou.com,REJECT
+- DOMAIN,kgmobilestatbak.kugou.com,REJECT
+- DOMAIN,mobilelog.kugou.com,REJECT
+- DOMAIN,mobilead.kuwo.cn,REJECT
+- DOMAIN,rich.kuwo.cn,REJECT
+- DOMAIN,ad-stat.ksosoft.com,REJECT
+- DOMAIN,img.auction-ads.wpscdn.cn,REJECT
+- DOMAIN,counter.kingsoft.com,REJECT
+- DOMAIN,counter.ksosoft.com,REJECT
+- DOMAIN,minfo.wps.cn,REJECT
+- DOMAIN,mobad.ijinshan.com,REJECT
+- DOMAIN,ups.ksmobile.net,REJECT
+- DOMAIN,ws.ksmobile.net,REJECT
+- DOMAIN-SUFFIX,webp2p.letv.com,REJECT
+- DOMAIN,ark.letv.com,REJECT
+- DOMAIN,emma-414870e223.huodonghezi.com,REJECT
+- DOMAIN,g3.letv.com,REJECT
+- DOMAIN,n.mark.letv.com,REJECT
+- DOMAIN,ad.hpplay.cn,REJECT
+- DOMAIN,adcdn.hpplay.cn,REJECT
+- DOMAIN,adeng.hpplay.cn,REJECT
+- DOMAIN,rp.hpplay.cn,REJECT
+- DOMAIN-SUFFIX,ad.intl.xiaomi.com,REJECT
+- DOMAIN-SUFFIX,ad.xiaomi.com,REJECT
+- DOMAIN-SUFFIX,admob.xiaomi.com,REJECT
+- DOMAIN,adv.sec.intl.miui.com,REJECT
+- DOMAIN,adv.sec.miui.com,REJECT
+- DOMAIN,ad.api.moji.com,REJECT
+- DOMAIN,adlaunch.moji.com,REJECT
+- DOMAIN,ads.mojicdn.com,REJECT
+- DOMAIN,v1.log.moji.com,REJECT
+- DOMAIN,ad.bn.netease.com,REJECT
+- DOMAIN,ad.yixin.im,REJECT
+- DOMAIN,admusicpic.music.126.net,REJECT
+- DOMAIN,gorgon.youdao.com,REJECT
+- DOMAIN,iadmat.nosdn.127.net,REJECT
+- DOMAIN,iadmusicmat.music.126.net,REJECT
+- DOMAIN,iadmusicmatvideo.music.126.net,REJECT
+- DOMAIN,impservice.dictapp.youdao.com,REJECT
+- DOMAIN,impservice.youdao.com,REJECT
+- DOMAIN,log.yex.youdao.com,REJECT
+- DOMAIN,log-yex.youdao.com,REJECT
+- DOMAIN,n.3g.163.com,REJECT
+- DOMAIN,nex.163.com,REJECT
+- DOMAIN,yt-adp.nosdn.127.net,REJECT
+- DOMAIN,yt-adp.ws.126.net,REJECT
+- DOMAIN,ads.aplus.pptv.com,REJECT
+- DOMAIN,ads.aplusapi.pptv.com,REJECT
+- DOMAIN,asimgs.pplive.cn,REJECT
+- DOMAIN,de.as.pptv.com,REJECT
+- DOMAIN,regist.fotoable.com,REJECT
+- DOMAIN,cdn.adapi.fotoable.com,REJECT
+- DOMAIN,adnew.wifi8.com,REJECT
+- DOMAIN,adfile.wifi8.com,REJECT
+- DOMAIN-SUFFIX,beacon.sina.com.cn,REJECT
+- DOMAIN,adimg.vue.weibo.com,REJECT
+- DOMAIN,u1.img.mobile.sina.cn,REJECT
+- DOMAIN,sax.sina.com.cn,REJECT
+- DOMAIN,saxs.sina.com.cn,REJECT
+- DOMAIN,saxn.sina.com.cn,REJECT
+- DOMAIN-SUFFIX,ad.sohu.com,REJECT
+- DOMAIN-SUFFIX,ads.sohu.com,REJECT
+- DOMAIN-SUFFIX,aty.sohu.com,REJECT
+- DOMAIN,imp.optaim.com,REJECT
+- DOMAIN,v2.reachmax.cn,REJECT
+- DOMAIN,track.sohu.com,REJECT
+- DOMAIN,hui.sohu.com,REJECT
+- DOMAIN-SUFFIX,e.qq.com,REJECT
+- DOMAIN-SUFFIX,gdt.qq.com,REJECT
+- DOMAIN-SUFFIX,l.qq.com,REJECT
+- DOMAIN,adsmind.apdcdn.tc.qq.com,REJECT
+- DOMAIN,adsmind.gdtimg.com,REJECT
+- DOMAIN,adsmind.tc.qq.com,REJECT
+- DOMAIN,pgdt.gtimg.cn,REJECT
+- DOMAIN,pgdt.gtimg.com,REJECT
+- DOMAIN,pgdt.ugdtimg.com,REJECT
+- DOMAIN,splashqqlive.gtimg.com,REJECT
+- DOMAIN,wa.gtimg.com,REJECT
+- DOMAIN,wxsnsdy.wxs.qq.com,REJECT
+- DOMAIN,wxsnsdythumb.wxs.qq.com,REJECT
+- DOMAIN,admonitor.thepaper.cn,REJECT
+- DOMAIN,adpai.thepaper.cn,REJECT
+- DOMAIN,imgadpai.thepaper.cn,REJECT
+- DOMAIN,adsp.xunlei.com,REJECT
+- DOMAIN,etl.xlmc.sandai.net,REJECT
+- DOMAIN,adm.10jqka.com.cn,REJECT
+- DOMAIN,stat.10jqka.com.cn,REJECT
+- DOMAIN,ad-analysis.pconline.com.cn,REJECT
+- DOMAIN,iad0ssl.pcauto.com.cn,REJECT
+- DOMAIN,iad0ssl.pconline.com.cn,REJECT
+- DOMAIN,imgad0.pcauto.com.cn,REJECT
+- DOMAIN,imgad0.pconline.com.cn,REJECT
+- DOMAIN,ivy.pchouse.com.cn,REJECT
+- DOMAIN,a.wkanx.com,REJECT
+- DOMAIN,cwx.lianwangtech.com,REJECT
+- DOMAIN,c1wx.lianwangtech.com,REJECT
+- DOMAIN,ad.ximalaya.com,REJECT
+- DOMAIN,adbs.ximalaya.com,REJECT
+- DOMAIN,adse.ximalaya.com,REJECT
+- DOMAIN,adse.wsa.ximalaya.com,REJECT
+- DOMAIN,adbehavior.wsa.ximalaya.com,REJECT
+- DOMAIN,adsebs.ximalaya.com,REJECT
+- DOMAIN,ads-img-qc.xhscdn.com,REJECT
+- DOMAIN,ads-video-qc.xhscdn.com,REJECT
+- DOMAIN,t-ads.xiaohongshu.com,REJECT
+- DOMAIN-SUFFIX,atm.youku.com,REJECT
+- DOMAIN,ad.mobile.youku.com,REJECT
+- DOMAIN,iyes.youku.com,REJECT
+- DOMAIN,apppv.zol.com.cn,REJECT
+- DOMAIN,pvnapp.zol.com.cn,REJECT
+# (视频网站)
+# > ABC
+- DOMAIN-SUFFIX,edgedatg.com,视频网站
+- DOMAIN-SUFFIX,go.com,视频网站
+
+# > AbemaTV
+- DOMAIN-SUFFIX,abema.io,AbemaTV
+- DOMAIN-SUFFIX,ameba.jp,AbemaTV
+- DOMAIN-SUFFIX,abema.tv,AbemaTV
+- DOMAIN-SUFFIX,hayabusa.io,AbemaTV
+- DOMAIN,abematv.akamaized.net,AbemaTV
+- DOMAIN,ds-linear-abematv.akamaized.net,AbemaTV
+- DOMAIN,ds-vod-abematv.akamaized.net,AbemaTV
+- DOMAIN,linear-abematv.akamaized.net,AbemaTV
+
+# > Amazon Prime Video
+- DOMAIN-SUFFIX,aiv-cdn.net,视频网站
+- DOMAIN-SUFFIX,amazonaws.com,视频网站
+- DOMAIN-SUFFIX,amazonvideo.com,视频网站
+- DOMAIN-SUFFIX,llnwd.net,视频网站
+
+# > Bahamut
+- DOMAIN-SUFFIX,bahamut.com.tw,视频网站
+- DOMAIN-SUFFIX,gamer.com.tw,视频网站
+- DOMAIN-SUFFIX,hinet.net,视频网站
+
+# > BBC
+- DOMAIN-KEYWORD,bbcfmt,视频网站
+- DOMAIN-KEYWORD,co.uk,视频网站
+- DOMAIN-KEYWORD,uk-live,视频网站
+- DOMAIN-SUFFIX,bbc.co,视频网站
+- DOMAIN-SUFFIX,bbc.co.uk,视频网站
+- DOMAIN-SUFFIX,bbc.com,视频网站
+- DOMAIN-SUFFIX,bbci.co,视频网站
+- DOMAIN-SUFFIX,bbci.co.uk,视频网站
+
+# > CHOCO TV
+- DOMAIN-SUFFIX,chocotv.com.tw,视频网站
+# > Epicgames|Uplay|Steam|EA
+# > Epicgames
+- DOMAIN-KEYWORD,epicgames,Epic|UPlay|Steam|EA
+- DOMAIN-SUFFIX,helpshift.com,Epic|UPlay|Steam|EA
+# > Uplay
+- DOMAIN-SUFFIX,ubi.com,Epic|UPlay|Steam|EA
+- DOMAIN-KEYWORD,ubisoft,Epic|UPlay|Steam|EA
+# > Blizzard
+- DOMAIN-SUFFIX,blizzard.com,Epic|UPlay|Steam|EA
+- DOMAIN-SUFFIX,battle.net,Epic|UPlay|Steam|EA
+- DOMAIN,blzddist1-a.akamaihd.net,Epic|UPlay|Steam|EA
+# > Steam
+- DOMAIN-SUFFIX,steamcommunity.com,Epic|UPlay|Steam|EA
+- DOMAIN-SUFFIX,steamstatic.com,Epic|UPlay|Steam|EA
+- DOMAIN-SUFFIX,steamcontent.com,Epic|UPlay|Steam|EA
+- DOMAIN-SUFFIX,steampowered.com,Epic|UPlay|Steam|EA
+- DOMAIN-SUFFIX,steam-chat.com,Epic|UPlay|Steam|EA
+- DOMAIN-KEYWORD,steamcdn,Epic|UPlay|Steam|EA
+- DOMAIN-KEYWORD,steamstore,Epic|UPlay|Steam|EA
+- DOMAIN-KEYWORD,steamuserimages,Epic|UPlay|Steam|EA
+- DOMAIN-KEYWORD,steambroadcast,Epic|UPlay|Steam|EA
+# > EA
+- DOMAIN-SUFFIX,origin.com,Epic|UPlay|Steam|EA
+- DOMAIN-SUFFIX,ea.com,Epic|UPlay|Steam|EA
+# > Fox+
+- DOMAIN-KEYWORD,foxplus,视频网站
+- DOMAIN-SUFFIX,config.fox.com,视频网站
+- DOMAIN-SUFFIX,emome.net,视频网站
+- DOMAIN-SUFFIX,fox.com,视频网站
+- DOMAIN-SUFFIX,foxdcg.com,视频网站
+- DOMAIN-SUFFIX,foxnow.com,视频网站
+- DOMAIN-SUFFIX,foxplus.com,视频网站
+- DOMAIN-SUFFIX,foxplay.com,视频网站
+- DOMAIN-SUFFIX,ipinfo.io,视频网站
+- DOMAIN-SUFFIX,mstage.io,视频网站
+- DOMAIN-SUFFIX,now.com,视频网站
+- DOMAIN-SUFFIX,theplatform.com,视频网站
+- DOMAIN-SUFFIX,urlload.net,视频网站
+
+# > HBO && HBO Go
+- DOMAIN-SUFFIX,execute-api.ap-southeast-1.amazonaws.com,视频网站
+- DOMAIN-SUFFIX,hbo.com,视频网站
+- DOMAIN-SUFFIX,hboasia.com,视频网站
+- DOMAIN-SUFFIX,hbogo.com,视频网站
+- DOMAIN-SUFFIX,hbogoasia.hk,视频网站
+
+# > Hulu
+- DOMAIN-SUFFIX,happyon.jp,视频网站
+- DOMAIN-SUFFIX,hulu.com,视频网站
+- DOMAIN-SUFFIX,huluim.com,视频网站
+- DOMAIN-SUFFIX,hulustream.com,视频网站
+
+# > Imkan
+- DOMAIN-SUFFIX,imkan.tv,视频网站
+
+# > JOOX
+- DOMAIN-SUFFIX,joox.com,视频网站
+
+# > MytvSUPER
+- DOMAIN-KEYWORD,nowtv100,视频网站
+- DOMAIN-KEYWORD,rthklive,视频网站
+- DOMAIN-SUFFIX,mytvsuper.com,视频网站
+- DOMAIN-SUFFIX,tvb.com,视频网站
+
+# > Netflix
+- DOMAIN-SUFFIX,fast.com,Netflix
+- DOMAIN-SUFFIX,netflix.com,Netflix
+- DOMAIN-SUFFIX,netflix.net,Netflix
+- DOMAIN-SUFFIX,nflxext.com,Netflix
+- DOMAIN-SUFFIX,nflximg.com,Netflix
+- DOMAIN-SUFFIX,nflximg.net,Netflix
+- DOMAIN-SUFFIX,nflxso.net,Netflix
+- DOMAIN-SUFFIX,nflxvideo.net,Netflix
+- DOMAIN-SUFFIX,netflixdnstest0.com,Netflix
+- DOMAIN-SUFFIX,netflixdnstest1.com,Netflix
+- DOMAIN-SUFFIX,netflixdnstest2.com,Netflix
+- DOMAIN-SUFFIX,netflixdnstest3.com,Netflix
+- DOMAIN-SUFFIX,netflixdnstest4.com,Netflix
+- DOMAIN-SUFFIX,netflixdnstest5.com,Netflix
+- DOMAIN-SUFFIX,netflixdnstest6.com,Netflix
+- DOMAIN-SUFFIX,netflixdnstest7.com,Netflix
+- DOMAIN-SUFFIX,netflixdnstest8.com,Netflix
+- DOMAIN-SUFFIX,netflixdnstest9.com,Netflix
+- IP-CIDR,23.246.0.0/18,Netflix,no-resolve
+- IP-CIDR,37.77.184.0/21,Netflix,no-resolve
+- IP-CIDR,45.57.0.0/17,Netflix,no-resolve
+- IP-CIDR,64.120.128.0/17,Netflix,no-resolve
+- IP-CIDR,66.197.128.0/17,Netflix,no-resolve
+- IP-CIDR,108.175.32.0/20,Netflix,no-resolve
+- IP-CIDR,192.173.64.0/18,Netflix,no-resolve
+- IP-CIDR,198.38.96.0/19,Netflix,no-resolve
+- IP-CIDR,198.45.48.0/20,Netflix,no-resolve
+
+# > Pandora
+- DOMAIN-SUFFIX,pandora.com,视频网站
+
+# > Sky GO
+- DOMAIN-SUFFIX,sky.com,视频网站
+- DOMAIN-SUFFIX,skygo.co.nz,视频网站
+
+# > Spotify
+- DOMAIN-KEYWORD,spotify,视频网站
+- DOMAIN-SUFFIX,scdn.co,视频网站
+- DOMAIN-SUFFIX,spoti.fi,视频网站
+
+# > viuTV
+- DOMAIN-SUFFIX,viu.tv,视频网站
+
+# > Youtube
+- DOMAIN-KEYWORD,youtube,视频网站
+- DOMAIN-SUFFIX,googlevideo.com,视频网站
+- DOMAIN-SUFFIX,gvt2.com,视频网站
+- DOMAIN-SUFFIX,youtu.be,视频网站
+
+
+
+# (B站港澳台|iQIYI|NeteaseMusic|TencentVideo)
+# > B站港澳台
+- DOMAIN-KEYWORD,bilibili,B站港澳台
+- DOMAIN-SUFFIX,acg.tv,B站港澳台
+- DOMAIN-SUFFIX,acgvideo.com,B站港澳台
+- DOMAIN-SUFFIX,b23.tv,B站港澳台
+- DOMAIN-SUFFIX,biliapi.com,B站港澳台
+- DOMAIN-SUFFIX,biliapi.net,B站港澳台
+- DOMAIN-SUFFIX,bilibili.com,B站港澳台
+- DOMAIN-SUFFIX,biligame.com,B站港澳台
+- DOMAIN-SUFFIX,biligame.net,B站港澳台
+- DOMAIN-SUFFIX,hdslb.com,B站港澳台
+- DOMAIN-SUFFIX,im9.com,B站港澳台
+
+# # > IQIYI
+# - DOMAIN-KEYWORD,qiyi,B站港澳台|iQIYI|NeteaseMusic|TencentVideo
+# - DOMAIN-SUFFIX,qy.net,B站港澳台|iQIYI|NeteaseMusic|TencentVideo
+
+# # > letv
+# - DOMAIN-SUFFIX,api.mob.app.letv.com,B站港澳台|iQIYI|NeteaseMusic|TencentVideo
+
+# # > NeteaseMusic
+# - DOMAIN-SUFFIX,163yun.com,B站港澳台|iQIYI|NeteaseMusic|TencentVideo
+# - DOMAIN-SUFFIX,music.126.net,B站港澳台|iQIYI|NeteaseMusic|TencentVideo
+# - DOMAIN-SUFFIX,music.163.com,B站港澳台|iQIYI|NeteaseMusic|TencentVideo
+
+# # > Tencent Video
+# - DOMAIN-SUFFIX,vv.video.qq.com,B站港澳台|iQIYI|NeteaseMusic|TencentVideo
+
+# China Area Network
+# > Microsoft
+- DOMAIN-SUFFIX,microsoft.com,国内网站
+- DOMAIN-SUFFIX,windows.net,国内网站
+- DOMAIN-SUFFIX,sfx.ms,国内网站
+- DOMAIN-SUFFIX,sharepoint.com,国内网站
+- DOMAIN-KEYWORD,officecdn,国内网站
+
+# > Tencent
+#USER-AGENT,MicroMessenger%20Client,国内网站
+#USER-AGENT,WeChat*,国内网站
+- DOMAIN-SUFFIX,qq.com,国内网站
+- DOMAIN-SUFFIX,qpic.cn,国内网站
+- DOMAIN-SUFFIX,tencent.com,国内网站
+# > Alibaba
+- DOMAIN-SUFFIX,alibaba.com,国内网站
+- DOMAIN-SUFFIX,alicdn.com,国内网站
+- DOMAIN-SUFFIX,amap.com,国内网站
+- DOMAIN-SUFFIX,dingtalk.com,国内网站
+- DOMAIN-SUFFIX,taobao.com,国内网站
+- DOMAIN-SUFFIX,tmall.com,国内网站
+- DOMAIN-SUFFIX,ykimg.com,国内网站
+- DOMAIN-SUFFIX,youku.com,国内网站
+- DOMAIN-SUFFIX,xiami.com,国内网站
+- DOMAIN-SUFFIX,xiami.net,国内网站
+# > NetEase
+- DOMAIN-SUFFIX,163.com,国内网站
+- DOMAIN-SUFFIX,126.net,国内网站
+- DOMAIN-SUFFIX,163yun.com,国内网站
+# > Sohu
+- DOMAIN-SUFFIX,sohu.com.cn,国内网站
+- DOMAIN-SUFFIX,itc.cn,国内网站
+- DOMAIN-SUFFIX,sohu.com,国内网站
+- DOMAIN-SUFFIX,v-56.com,国内网站
+# > Sina
+- DOMAIN-SUFFIX,weibo.com,国内网站
+- DOMAIN-SUFFIX,weibo.cn,国内网站
+# > JD
+- DOMAIN-SUFFIX,jd.com,国内网站
+- DOMAIN-SUFFIX,jd.hk,国内网站
+- DOMAIN-SUFFIX,360buyimg.com,国内网站
+# > MI
+- DOMAIN-SUFFIX,duokan.com,国内网站
+- DOMAIN-SUFFIX,mi-img.com,国内网站
+- DOMAIN-SUFFIX,mifile.cn,国内网站
+- DOMAIN-SUFFIX,xiaomi.com,国内网站
+# > bilibili
+- DOMAIN-SUFFIX,acgvideo.com,国内网站
+- DOMAIN-SUFFIX,bilibili.com,国内网站
+- DOMAIN-SUFFIX,hdslb.com,国内网站
+# > iQiyi
+- DOMAIN-SUFFIX,iqiyi.com,国内网站
+- DOMAIN-SUFFIX,iqiyipic.com,国内网站
+- DOMAIN-SUFFIX,71.am.com,国内网站
+# > HunanTV
+- DOMAIN-SUFFIX,hitv.com,国内网站
+- DOMAIN-SUFFIX,mgtv.com,国内网站
+# > Meitu
+- DOMAIN-SUFFIX,meitu.com,国内网站
+- DOMAIN-SUFFIX,meitudata.com,国内网站
+- DOMAIN-SUFFIX,meipai.com,国内网站
+# > YYeTs
+- DOMAIN-SUFFIX,zmzapi.com,国内网站
+- DOMAIN-SUFFIX,zimuzu.tv,国内网站
+- DOMAIN-SUFFIX,zmzfile.com,国内网站
+- DOMAIN-SUFFIX,zmzapi.net,国内网站
+# > 蛋蛋赞
+- DOMAIN-SUFFIX,baduziyuan.com,国内网站
+- DOMAIN-SUFFIX,com-hs-hkdy.com,国内网站
+- DOMAIN-SUFFIX,czybjz.com,国内网站
+- DOMAIN-SUFFIX,dandanzan.com,国内网站
+- DOMAIN-SUFFIX,fjhps.com,国内网站
+- DOMAIN-SUFFIX,kuyunbo.club,国内网站
+# > Baidu
+- DOMAIN-SUFFIX,baidu.com,国内网站
+- DOMAIN-SUFFIX,baidubcr.com,国内网站
+- DOMAIN-SUFFIX,bdstatic.com,国内网站
+# > ChinaNet
+- DOMAIN-SUFFIX,189.cn,国内网站
+- DOMAIN-SUFFIX,21cn.com,国内网站
+# > ByteDance
+- DOMAIN-SUFFIX,bytecdn.cn,国内网站
+- DOMAIN-SUFFIX,pstatp.com,国内网站
+- DOMAIN-SUFFIX,snssdk.com,国内网站
+- DOMAIN-SUFFIX,toutiao.com,国内网站
+# > Content Delivery Network
+# > Akamai
+- DOMAIN-SUFFIX,akadns.net,国内网站
+# - DOMAIN-SUFFIX,akamai.net,国内网站
+# - DOMAIN-SUFFIX,akamaiedge.net,国内网站
+# - DOMAIN-SUFFIX,akamaihd.net,国内网站
+# - DOMAIN-SUFFIX,akamaistream.net,国内网站
+# - DOMAIN-SUFFIX,akamaized.net,国内网站
+# > ChinaNetCenter
+- DOMAIN-SUFFIX,chinanetcenter.com,国内网站
+- DOMAIN-SUFFIX,wangsu.com,国内网站
+# > IP Query
+- DOMAIN-SUFFIX,ipip.net,国内网站
+- DOMAIN-SUFFIX,ip.cn,国内网站
+- DOMAIN-SUFFIX,ip.la,国内网站
+- DOMAIN-SUFFIX,ip-cdn.com,国内网站
+- DOMAIN-SUFFIX,ipv6-test.com,国内网站
+- DOMAIN-SUFFIX,test-ipv6.com,国内网站
+- DOMAIN-SUFFIX,whatismyip.com,国内网站
+- DOMAIN,ip.bjango.com,国内网站
+# > Other
+- DOMAIN-SUFFIX,40017.cn,国内网站
+- DOMAIN-SUFFIX,broadcasthe.net,国内网站
+- DOMAIN-SUFFIX,cailianpress.com,国内网站
+- DOMAIN-SUFFIX,chdbits.co,国内网站
+- DOMAIN-SUFFIX,chushou.tv,国内网站
+- DOMAIN-SUFFIX,cmbchina.com,国内网站
+- DOMAIN-SUFFIX,cmbimg.com,国内网站
+- DOMAIN-SUFFIX,cmct.tv,国内网站
+- DOMAIN-SUFFIX,cmvideo.cn,国内网站
+- DOMAIN-SUFFIX,cnlang.org,国内网站
+- DOMAIN-SUFFIX,doubanio.com,国内网站
+- DOMAIN-SUFFIX,douyu.com,国内网站
+- DOMAIN-SUFFIX,douyucdn.cn,国内网站
+- DOMAIN-SUFFIX,dxycdn.com,国内网站
+- DOMAIN-SUFFIX,hicloud.com,国内网站
+- DOMAIN-SUFFIX,hdchina.org,国内网站
+- DOMAIN-SUFFIX,hdcmct.org,国内网站
+- DOMAIN-SUFFIX,ithome.com,国内网站
+- DOMAIN-SUFFIX,kkmh.com,国内网站
+- DOMAIN-SUFFIX,ksosoft.com,国内网站
+- DOMAIN-SUFFIX,maoyun.tv,国内网站
+- DOMAIN-SUFFIX,meituan.net,国内网站
+- DOMAIN-SUFFIX,mobike.com,国内网站
+- DOMAIN-SUFFIX,mubu.com,国内网站
+- DOMAIN-SUFFIX,myzaker.com,国内网站
+- DOMAIN-SUFFIX,ourbits.club,国内网站
+- DOMAIN-SUFFIX,passthepopcorn.me,国内网站
+- DOMAIN-SUFFIX,paypal.com,国内网站
+- DOMAIN-SUFFIX,paypalobjects.com,国内网站
+- DOMAIN-SUFFIX,privatehd.to,国内网站
+- DOMAIN-SUFFIX,redacted.ch,国内网站
+- DOMAIN-SUFFIX,ruguoapp.com,国内网站
+- DOMAIN-SUFFIX,smzdm.com,国内网站
+- DOMAIN-SUFFIX,sogou.com,国内网站
+- DOMAIN-SUFFIX,teamviewer.com,国内网站
+- DOMAIN-SUFFIX,totheglory.im,国内网站
+- DOMAIN-SUFFIX,tp.m-team.cc,国内网站
+- DOMAIN-SUFFIX,udacity.com,国内网站
+- DOMAIN-SUFFIX,xmcdn.com,国内网站
+- DOMAIN-SUFFIX,yangkeduo.com,国内网站
+- DOMAIN-SUFFIX,zhihu.com,国内网站
+- DOMAIN-SUFFIX,zhimg.com,国内网站
+#USER-AGENT,NeteaseMusic*,国内网站
+#USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*,国内网站
+
+# (DNS Cache Pollution Protection)
+# > Google
+- DOMAIN-SUFFIX,appspot.com,节点选择
+- DOMAIN-SUFFIX,blogger.com,节点选择
+- DOMAIN-SUFFIX,getoutline.org,节点选择
+- DOMAIN-SUFFIX,gvt0.com,节点选择
+- DOMAIN-SUFFIX,gvt1.com,节点选择
+- DOMAIN-SUFFIX,gvt3.com,节点选择
+- DOMAIN-SUFFIX,xn--ngstr-lra8j.com,节点选择
+- DOMAIN-KEYWORD,google,节点选择
+- DOMAIN-KEYWORD,blogspot,节点选择
+# > Facebook
+- DOMAIN-SUFFIX,cdninstagram.com,节点选择
+- DOMAIN-SUFFIX,fb.com,节点选择
+- DOMAIN-SUFFIX,fb.me,节点选择
+- DOMAIN-SUFFIX,fbaddins.com,节点选择
+- DOMAIN-SUFFIX,fbcdn.net,节点选择
+- DOMAIN-SUFFIX,fbsbx.com,节点选择
+- DOMAIN-SUFFIX,fbworkmail.com,节点选择
+- DOMAIN-SUFFIX,instagram.com,节点选择
+- DOMAIN-SUFFIX,m.me,节点选择
+- DOMAIN-SUFFIX,messenger.com,节点选择
+- DOMAIN-SUFFIX,oculus.com,节点选择
+- DOMAIN-SUFFIX,oculuscdn.com,节点选择
+- DOMAIN-SUFFIX,rocksdb.org,节点选择
+- DOMAIN-SUFFIX,whatsapp.com,节点选择
+- DOMAIN-SUFFIX,whatsapp.net,节点选择
+- DOMAIN-KEYWORD,facebook,节点选择
+# > Twitter
+- DOMAIN-SUFFIX,pscp.tv,节点选择
+- DOMAIN-SUFFIX,periscope.tv,节点选择
+- DOMAIN-SUFFIX,t.co,节点选择
+- DOMAIN-SUFFIX,twimg.co,节点选择
+- DOMAIN-SUFFIX,twimg.com,节点选择
+- DOMAIN-SUFFIX,twitpic.com,节点选择
+- DOMAIN-SUFFIX,vine.co,节点选择
+- DOMAIN-KEYWORD,twitter,节点选择
+# > Telegram
+- DOMAIN-SUFFIX,t.me,节点选择
+- DOMAIN-SUFFIX,tdesktop.com,节点选择
+- DOMAIN-SUFFIX,telegra.ph,节点选择
+- DOMAIN-SUFFIX,telegram.me,节点选择
+- DOMAIN-SUFFIX,telegram.org,节点选择
+# > Line
+- DOMAIN-SUFFIX,line.me,节点选择
+- DOMAIN-SUFFIX,line-apps.com,节点选择
+- DOMAIN-SUFFIX,line-scdn.net,节点选择
+- DOMAIN-SUFFIX,naver.jp,节点选择
+# > Other
+- DOMAIN-SUFFIX,4shared.com,节点选择
+- DOMAIN-SUFFIX,881903.com,节点选择
+- DOMAIN-SUFFIX,abc.net.au,节点选择
+- DOMAIN-SUFFIX,abebooks.com,节点选择
+- DOMAIN-SUFFIX,amazon.co.jp,节点选择
+- DOMAIN-SUFFIX,apigee.com,节点选择
+- DOMAIN-SUFFIX,apk-dl.com,节点选择
+- DOMAIN-SUFFIX,apkmirror.com,节点选择
+- DOMAIN-SUFFIX,apkmonk.com,节点选择
+- DOMAIN-SUFFIX,apkpure.com,节点选择
+- DOMAIN-SUFFIX,aptoide.com,节点选择
+- DOMAIN-SUFFIX,archive.is,节点选择
+- DOMAIN-SUFFIX,archive.org,节点选择
+- DOMAIN-SUFFIX,arte.tv,节点选择
+- DOMAIN-SUFFIX,ask.com,节点选择
+- DOMAIN-SUFFIX,avgle.com,节点选择
+- DOMAIN-SUFFIX,badoo.com,节点选择
+- DOMAIN-SUFFIX,bandwagonhost.com,节点选择
+- DOMAIN-SUFFIX,bbc.com,节点选择
+- DOMAIN-SUFFIX,behance.net,节点选择
+- DOMAIN-SUFFIX,bibox.com,节点选择
+- DOMAIN-SUFFIX,biggo.com.tw,节点选择
+- DOMAIN-SUFFIX,binance.com,节点选择
+- DOMAIN-SUFFIX,bitcointalk.org,节点选择
+- DOMAIN-SUFFIX,bitfinex.com,节点选择
+- DOMAIN-SUFFIX,bitmex.com,节点选择
+- DOMAIN-SUFFIX,bit-z.com,节点选择
+- DOMAIN-SUFFIX,bloglovin.com,节点选择
+- DOMAIN-SUFFIX,bloomberg.cn,节点选择
+- DOMAIN-SUFFIX,bloomberg.com,节点选择
+- DOMAIN-SUFFIX,book.com.tw,节点选择
+- DOMAIN-SUFFIX,booklive.jp,节点选择
+- DOMAIN-SUFFIX,books.com.tw,节点选择
+- DOMAIN-SUFFIX,box.com,节点选择
+- DOMAIN-SUFFIX,brookings.edu,节点选择
+- DOMAIN-SUFFIX,businessinsider.com,节点选择
+- DOMAIN-SUFFIX,bwh1.net,节点选择
+- DOMAIN-SUFFIX,castbox.fm,节点选择
+- DOMAIN-SUFFIX,cbc.ca,节点选择
+- DOMAIN-SUFFIX,cdw.com,节点选择
+- DOMAIN-SUFFIX,change.org,节点选择
+- DOMAIN-SUFFIX,ck101.com,节点选择
+- DOMAIN-SUFFIX,clarionproject.org,节点选择
+- DOMAIN-SUFFIX,clyp.it,节点选择
+- DOMAIN-SUFFIX,cna.com.tw,节点选择
+- DOMAIN-SUFFIX,comparitech.com,节点选择
+- DOMAIN-SUFFIX,conoha.jp,节点选择
+- DOMAIN-SUFFIX,crucial.com,节点选择
+- DOMAIN-SUFFIX,cts.com.tw,节点选择
+- DOMAIN-SUFFIX,cw.com.tw,节点选择
+- DOMAIN-SUFFIX,cyberctm.com,节点选择
+- DOMAIN-SUFFIX,dailymotion.com,节点选择
+- DOMAIN-SUFFIX,dailyview.tw,节点选择
+- DOMAIN-SUFFIX,daum.net,节点选择
+- DOMAIN-SUFFIX,daumcdn.net,节点选择
+- DOMAIN-SUFFIX,dcard.tw,节点选择
+- DOMAIN-SUFFIX,deepdiscount.com,节点选择
+- DOMAIN-SUFFIX,deezer.com,节点选择
+- DOMAIN-SUFFIX,depositphotos.com,节点选择
+- DOMAIN-SUFFIX,disconnect.me,节点选择
+- DOMAIN-SUFFIX,discordapp.com,节点选择
+- DOMAIN-SUFFIX,discordapp.net,节点选择
+- DOMAIN-SUFFIX,disqus.com,节点选择
+- DOMAIN-SUFFIX,dns2go.com,节点选择
+- DOMAIN-SUFFIX,dropbox.com,节点选择
+- DOMAIN-SUFFIX,dropboxusercontent.com,节点选择
+- DOMAIN-SUFFIX,duckduckgo.com,节点选择
+- DOMAIN-SUFFIX,dw.com,节点选择
+- DOMAIN-SUFFIX,dynu.com,节点选择
+- DOMAIN-SUFFIX,earthcam.com,节点选择
+- DOMAIN-SUFFIX,ebookservice.tw,节点选择
+- DOMAIN-SUFFIX,economist.com,节点选择
+- DOMAIN-SUFFIX,edgecastcdn.net,节点选择
+- DOMAIN-SUFFIX,edu,节点选择
+- DOMAIN-SUFFIX,elpais.com,节点选择
+- DOMAIN-SUFFIX,enanyang.my,节点选择
+- DOMAIN-SUFFIX,euronews.com,节点选择
+- DOMAIN-SUFFIX,feedly.com,节点选择
+- DOMAIN-SUFFIX,files.wordpress.com,节点选择
+- DOMAIN-SUFFIX,flickr.com,节点选择
+- DOMAIN-SUFFIX,flitto.com,节点选择
+- DOMAIN-SUFFIX,foreignpolicy.com,节点选择
+- DOMAIN-SUFFIX,friday.tw,节点选择
+- DOMAIN-SUFFIX,gate.io,节点选择
+- DOMAIN-SUFFIX,getlantern.org,节点选择
+- DOMAIN-SUFFIX,getsync.com,节点选择
+- DOMAIN-SUFFIX,globalvoices.org,节点选择
+- DOMAIN-SUFFIX,goo.ne.jp,节点选择
+- DOMAIN-SUFFIX,goodreads.com,节点选择
+- DOMAIN-SUFFIX,gov.tw,节点选择
+- DOMAIN-SUFFIX,gumroad.com,节点选择
+- DOMAIN-SUFFIX,hbg.com,节点选择
+- DOMAIN-SUFFIX,hightail.com,节点选择
+- DOMAIN-SUFFIX,hk01.com,节点选择
+- DOMAIN-SUFFIX,hkbf.org,节点选择
+- DOMAIN-SUFFIX,hkbookcity.com,节点选择
+- DOMAIN-SUFFIX,hkej.com,节点选择
+- DOMAIN-SUFFIX,hket.com,节点选择
+- DOMAIN-SUFFIX,hkgolden.com,节点选择
+- DOMAIN-SUFFIX,hootsuite.com,节点选择
+- DOMAIN-SUFFIX,hudson.org,节点选择
+- DOMAIN-SUFFIX,huobi.pro,节点选择
+- DOMAIN-SUFFIX,initiummall.com,节点选择
+- DOMAIN-SUFFIX,ipfs.io,节点选择
+- DOMAIN-SUFFIX,issuu.com,节点选择
+- DOMAIN-SUFFIX,japantimes.co.jp,节点选择
+- DOMAIN-SUFFIX,jiji.com,节点选择
+- DOMAIN-SUFFIX,jinx.com,节点选择
+- DOMAIN-SUFFIX,jkforum.net,节点选择
+- DOMAIN-SUFFIX,joinmastodon.org,节点选择
+- DOMAIN-SUFFIX,kakao.com,节点选择
+- DOMAIN-SUFFIX,lihkg.com,节点选择
+- DOMAIN-SUFFIX,live.com,节点选择
+- DOMAIN-SUFFIX,mail.ru,节点选择
+- DOMAIN-SUFFIX,matters.news,节点选择
+- DOMAIN-SUFFIX,medium.com,节点选择
+- DOMAIN-SUFFIX,mega.nz,节点选择
+- DOMAIN-SUFFIX,mil,节点选择
+- DOMAIN-SUFFIX,mobile01.com,节点选择
+- DOMAIN-SUFFIX,naver.com,节点选择
+- DOMAIN-SUFFIX,nikkei.com,节点选择
+- DOMAIN-SUFFIX,nofile.io,节点选择
+- DOMAIN-SUFFIX,now.com,节点选择
+- DOMAIN-SUFFIX,nyt.com,节点选择
+- DOMAIN-SUFFIX,nytchina.com,节点选择
+- DOMAIN-SUFFIX,nytcn.me,节点选择
+- DOMAIN-SUFFIX,nytco.com,节点选择
+- DOMAIN-SUFFIX,nytimes.com,节点选择
+- DOMAIN-SUFFIX,nytimg.com,节点选择
+- DOMAIN-SUFFIX,nytlog.com,节点选择
+- DOMAIN-SUFFIX,nytstyle.com,节点选择
+- DOMAIN-SUFFIX,ok.ru,节点选择
+- DOMAIN-SUFFIX,okex.com,节点选择
+- DOMAIN-SUFFIX,pcloud.com,节点选择
+- DOMAIN-SUFFIX,pinimg.com,节点选择
+- DOMAIN-SUFFIX,pixiv.net,节点选择
+- DOMAIN-SUFFIX,pornhub.com,节点选择
+- DOMAIN-SUFFIX,pureapk.com,节点选择
+- DOMAIN-SUFFIX,quora.com,节点选择
+- DOMAIN-SUFFIX,quoracdn.net,节点选择
+- DOMAIN-SUFFIX,rakuten.co.jp,节点选择
+- DOMAIN-SUFFIX,reddit.com,节点选择
+- DOMAIN-SUFFIX,redditmedia.com,节点选择
+- DOMAIN-SUFFIX,resilio.com,节点选择
+- DOMAIN-SUFFIX,reuters.com,节点选择
+- DOMAIN-SUFFIX,scmp.com,节点选择
+- DOMAIN-SUFFIX,scribd.com,节点选择
+- DOMAIN-SUFFIX,seatguru.com,节点选择
+- DOMAIN-SUFFIX,shadowsocks.org,节点选择
+- DOMAIN-SUFFIX,slideshare.net,节点选择
+- DOMAIN-SUFFIX,soundcloud.com,节点选择
+- DOMAIN-SUFFIX,startpage.com,节点选择
+- DOMAIN-SUFFIX,steamcommunity.com,节点选择
+- DOMAIN-SUFFIX,steemit.com,节点选择
+- DOMAIN-SUFFIX,t66y.com,节点选择
+- DOMAIN-SUFFIX,teco-hk.org,节点选择
+- DOMAIN-SUFFIX,teco-mo.org,节点选择
+- DOMAIN-SUFFIX,teddysun.com,节点选择
+- DOMAIN-SUFFIX,theinitium.com,节点选择
+- DOMAIN-SUFFIX,tineye.com,节点选择
+- DOMAIN-SUFFIX,torproject.org,节点选择
+- DOMAIN-SUFFIX,tumblr.com,节点选择
+- DOMAIN-SUFFIX,turbobit.net,节点选择
+- DOMAIN-SUFFIX,twitch.tv,节点选择
+- DOMAIN-SUFFIX,udn.com,节点选择
+- DOMAIN-SUFFIX,unseen.is,节点选择
+- DOMAIN-SUFFIX,upmedia.mg,节点选择
+- DOMAIN-SUFFIX,uptodown.com,节点选择
+- DOMAIN-SUFFIX,ustream.tv,节点选择
+- DOMAIN-SUFFIX,uwants.com,节点选择
+- DOMAIN-SUFFIX,v2ray.com,节点选择
+- DOMAIN-SUFFIX,viber.com,节点选择
+- DOMAIN-SUFFIX,videopress.com,节点选择
+- DOMAIN-SUFFIX,vimeo.com,节点选择
+- DOMAIN-SUFFIX,voxer.com,节点选择
+- DOMAIN-SUFFIX,vzw.com,节点选择
+- DOMAIN-SUFFIX,w3schools.com,节点选择
+- DOMAIN-SUFFIX,wattpad.com,节点选择
+- DOMAIN-SUFFIX,whoer.net,节点选择
+- DOMAIN-SUFFIX,wikimapia.org,节点选择
+- DOMAIN-SUFFIX,wikipedia.org,节点选择
+- DOMAIN-SUFFIX,wire.com,节点选择
+- DOMAIN-SUFFIX,worldcat.org,节点选择
+- DOMAIN-SUFFIX,wsj.com,节点选择
+- DOMAIN-SUFFIX,wsj.net,节点选择
+- DOMAIN-SUFFIX,xboxlive.com,节点选择
+- DOMAIN-SUFFIX,xvideos.com,节点选择
+- DOMAIN-SUFFIX,yahoo.com,节点选择
+- DOMAIN-SUFFIX,yesasia.com,节点选择
+- DOMAIN-SUFFIX,yes-news.com,节点选择
+- DOMAIN-SUFFIX,yomiuri.co.jp,节点选择
+- DOMAIN-SUFFIX,you-get.org,节点选择
+- DOMAIN-SUFFIX,zb.com,节点选择
+- DOMAIN-SUFFIX,zello.com,节点选择
+- DOMAIN-SUFFIX,zeronet.io,节点选择
+- DOMAIN,cdn-images.mailchimp.com,节点选择
+- DOMAIN,id.heroku.com,节点选择
+- DOMAIN-KEYWORD,github,节点选择
+- DOMAIN-KEYWORD,jav,节点选择
+- DOMAIN-KEYWORD,pinterest,节点选择
+- DOMAIN-KEYWORD,porn,节点选择
+- DOMAIN-KEYWORD,wikileaks,节点选择
+
+# (Region-Restricted Access Denied)
+- DOMAIN-SUFFIX,apartmentratings.com,节点选择
+- DOMAIN-SUFFIX,apartments.com,节点选择
+- DOMAIN-SUFFIX,bankmobilevibe.com,节点选择
+- DOMAIN-SUFFIX,bing.com,节点选择
+- DOMAIN-SUFFIX,booktopia.com.au,节点选择
+- DOMAIN-SUFFIX,centauro.com.br,节点选择
+- DOMAIN-SUFFIX,clearsurance.com,节点选择
+- DOMAIN-SUFFIX,costco.com,节点选择
+- DOMAIN-SUFFIX,crackle.com,节点选择
+- DOMAIN-SUFFIX,depositphotos.cn,节点选择
+- DOMAIN-SUFFIX,dish.com,节点选择
+- DOMAIN-SUFFIX,dmm.co.jp,节点选择
+- DOMAIN-SUFFIX,dmm.com,节点选择
+- DOMAIN-SUFFIX,dnvod.tv,节点选择
+- DOMAIN-SUFFIX,esurance.com,节点选择
+- DOMAIN-SUFFIX,extmatrix.com,节点选择
+- DOMAIN-SUFFIX,fastpic.ru,节点选择
+- DOMAIN-SUFFIX,flipboard.com,节点选择
+- DOMAIN-SUFFIX,fnac.be,节点选择
+- DOMAIN-SUFFIX,fnac.com,节点选择
+- DOMAIN-SUFFIX,funkyimg.com,节点选择
+- DOMAIN-SUFFIX,fxnetworks.com,节点选择
+- DOMAIN-SUFFIX,gettyimages.com,节点选择
+- DOMAIN-SUFFIX,jcpenney.com,节点选择
+- DOMAIN-SUFFIX,kknews.cc,节点选择
+- DOMAIN-SUFFIX,nationwide.com,节点选择
+- DOMAIN-SUFFIX,nbc.com,节点选择
+- DOMAIN-SUFFIX,nordstrom.com,节点选择
+- DOMAIN-SUFFIX,nordstromimage.com,节点选择
+- DOMAIN-SUFFIX,nordstromrack.com,节点选择
+- DOMAIN-SUFFIX,read01.com,节点选择
+- DOMAIN-SUFFIX,superpages.com,节点选择
+- DOMAIN-SUFFIX,target.com,节点选择
+- DOMAIN-SUFFIX,thinkgeek.com,节点选择
+- DOMAIN-SUFFIX,tracfone.com,节点选择
+- DOMAIN-SUFFIX,uploader.jp,节点选择
+- DOMAIN-SUFFIX,vevo.com,节点选择
+- DOMAIN-SUFFIX,viu.tv,节点选择
+- DOMAIN-SUFFIX,vk.com,节点选择
+- DOMAIN-SUFFIX,vsco.co,节点选择
+- DOMAIN-SUFFIX,xfinity.com,节点选择
+- DOMAIN-SUFFIX,zattoo.com,节点选择
+- DOMAIN,abc.com,节点选择
+- DOMAIN,abc.go.com,节点选择
+- DOMAIN,abc.net.au,节点选择
+- DOMAIN,wego.here.com,节点选择
+
+# > Telegram
+- DOMAIN-SUFFIX,t.me,节点选择
+- DOMAIN-SUFFIX,tdesktop.com,节点选择
+- DOMAIN-SUFFIX,telegra.ph,节点选择
+- DOMAIN-SUFFIX,telegram.me,节点选择
+- DOMAIN-SUFFIX,telegram.org,节点选择
+- IP-CIDR,91.108.0.0/16,节点选择,no-resolve
+- IP-CIDR,109.239.140.0/24,节点选择,no-resolve
+- IP-CIDR,149.154.160.0/20,节点选择,no-resolve
+- IP-CIDR6,2001:67c:4e8::/48,节点选择,no-resolve
+- IP-CIDR6,2001:b28:f23d::/48,节点选择,no-resolve
+- IP-CIDR6,2001:b28:f23f::/48,节点选择,no-resolve
+#USER-AGENT,Roam*,节点选择
+
+# (The Most Popular Sites)
+# > Apple
+# > Apple URL Shortener
+- DOMAIN-SUFFIX,appsto.re,节点选择
+# > TestFlight
+- DOMAIN,beta.itunes.apple.com,节点选择
+# > iBooks Store download
+- DOMAIN,books.itunes.apple.com,节点选择
+# > iTunes Store Moveis Trailers
+- DOMAIN,hls.itunes.apple.com,节点选择
+# App Store Preview
+- DOMAIN,itunes.apple.com,节点选择
+# > Spotlight
+- DOMAIN,api-glb-sea.smoot.apple.com,节点选择
+# > Dictionary
+- DOMAIN,lookup-api.apple.com,节点选择
+#PROCESS-NAME,LookupViewService,节点选择
+# > Google
+- DOMAIN-SUFFIX,abc.xyz,节点选择
+- DOMAIN-SUFFIX,android.com,节点选择
+- DOMAIN-SUFFIX,androidify.com,节点选择
+- DOMAIN-SUFFIX,dialogflow.com,节点选择
+- DOMAIN-SUFFIX,autodraw.com,节点选择
+- DOMAIN-SUFFIX,capitalg.com,节点选择
+- DOMAIN-SUFFIX,certificate-transparency.org,节点选择
+- DOMAIN-SUFFIX,chrome.com,节点选择
+- DOMAIN-SUFFIX,chromeexperiments.com,节点选择
+- DOMAIN-SUFFIX,chromestatus.com,节点选择
+- DOMAIN-SUFFIX,chromium.org,节点选择
+- DOMAIN-SUFFIX,creativelab5.com,节点选择
+- DOMAIN-SUFFIX,debug.com,节点选择
+- DOMAIN-SUFFIX,deepmind.com,节点选择
+- DOMAIN-SUFFIX,firebaseio.com,节点选择
+- DOMAIN-SUFFIX,getmdl.io,节点选择
+- DOMAIN-SUFFIX,ggpht.com,节点选择
+- DOMAIN-SUFFIX,gmail.com,节点选择
+- DOMAIN-SUFFIX,gmodules.com,节点选择
+- DOMAIN-SUFFIX,godoc.org,节点选择
+- DOMAIN-SUFFIX,golang.org,节点选择
+- DOMAIN-SUFFIX,gstatic.com,节点选择
+- DOMAIN-SUFFIX,gv.com,节点选择
+- DOMAIN-SUFFIX,gwtproject.org,节点选择
+- DOMAIN-SUFFIX,itasoftware.com,节点选择
+- DOMAIN-SUFFIX,madewithcode.com,节点选择
+- DOMAIN-SUFFIX,material.io,节点选择
+- DOMAIN-SUFFIX,polymer-project.org,节点选择
+- DOMAIN-SUFFIX,admin.recaptcha.net,节点选择
+- DOMAIN-SUFFIX,recaptcha.net,节点选择
+- DOMAIN-SUFFIX,shattered.io,节点选择
+- DOMAIN-SUFFIX,synergyse.com,节点选择
+- DOMAIN-SUFFIX,tensorflow.org,节点选择
+- DOMAIN-SUFFIX,tiltbrush.com,节点选择
+- DOMAIN-SUFFIX,waveprotocol.org,节点选择
+- DOMAIN-SUFFIX,waymo.com,节点选择
+- DOMAIN-SUFFIX,webmproject.org,节点选择
+- DOMAIN-SUFFIX,webrtc.org,节点选择
+- DOMAIN-SUFFIX,whatbrowser.org,节点选择
+- DOMAIN-SUFFIX,widevine.com,节点选择
+- DOMAIN-SUFFIX,x.company,节点选择
+- DOMAIN-SUFFIX,youtu.be,节点选择
+- DOMAIN-SUFFIX,yt.be,节点选择
+- DOMAIN-SUFFIX,ytimg.com,节点选择
+# > Steam
+- DOMAIN,media.steampowered.com,节点选择
+- DOMAIN,store.steampowered.com,节点选择
+# > Other
+- DOMAIN-SUFFIX,0rz.tw,节点选择
+- DOMAIN-SUFFIX,4bluestones.biz,节点选择
+- DOMAIN-SUFFIX,9bis.net,节点选择
+- DOMAIN-SUFFIX,allconnected.co,节点选择
+- DOMAIN-SUFFIX,amazonaws.com,节点选择
+- DOMAIN-SUFFIX,aol.com,节点选择
+- DOMAIN-SUFFIX,bcc.com.tw,节点选择
+- DOMAIN-SUFFIX,bit.ly,节点选择
+- DOMAIN-SUFFIX,bitshare.com,节点选择
+- DOMAIN-SUFFIX,blog.jp,节点选择
+- DOMAIN-SUFFIX,blogimg.jp,节点选择
+- DOMAIN-SUFFIX,blogtd.org,节点选择
+- DOMAIN-SUFFIX,broadcast.co.nz,节点选择
+- DOMAIN-SUFFIX,camfrog.com,节点选择
+- DOMAIN-SUFFIX,cfos.de,节点选择
+- DOMAIN-SUFFIX,citypopulation.de,节点选择
+- DOMAIN-SUFFIX,cloudfront.net,节点选择
+- DOMAIN-SUFFIX,ctitv.com.tw,节点选择
+- DOMAIN-SUFFIX,cuhk.edu.hk,节点选择
+- DOMAIN-SUFFIX,cusu.hk,节点选择
+- DOMAIN-SUFFIX,discuss.com.hk,节点选择
+- DOMAIN-SUFFIX,dropboxapi.com,节点选择
+- DOMAIN-SUFFIX,edditstatic.com,节点选择
+- DOMAIN-SUFFIX,flickriver.com,节点选择
+- DOMAIN-SUFFIX,focustaiwan.tw,节点选择
+- DOMAIN-SUFFIX,free.fr,节点选择
+- DOMAIN-SUFFIX,ftchinese.com,节点选择
+- DOMAIN-SUFFIX,gigacircle.com,节点选择
+- DOMAIN-SUFFIX,gov,节点选择
+- DOMAIN-SUFFIX,hk-pub.com,节点选择
+- DOMAIN-SUFFIX,hosting.co.uk,节点选择
+- DOMAIN-SUFFIX,hwcdn.net,节点选择
+- DOMAIN-SUFFIX,jtvnw.net,节点选择
+- DOMAIN-SUFFIX,linksalpha.com,节点选择
+- DOMAIN-SUFFIX,manyvids.com,节点选择
+- DOMAIN-SUFFIX,myactimes.com,节点选择
+- DOMAIN-SUFFIX,newsblur.com,节点选择
+- DOMAIN-SUFFIX,now.im,节点选择
+- DOMAIN-SUFFIX,redditlist.com,节点选择
+- DOMAIN-SUFFIX,signal.org,节点选择
+- DOMAIN-SUFFIX,sparknotes.com,节点选择
+- DOMAIN-SUFFIX,streetvoice.com,节点选择
+- DOMAIN-SUFFIX,ttvnw.net,节点选择
+- DOMAIN-SUFFIX,tv.com,节点选择
+- DOMAIN-SUFFIX,twitchcdn.net,节点选择
+- DOMAIN-SUFFIX,typepad.com,节点选择
+- DOMAIN-SUFFIX,udnbkk.com,节点选择
+- DOMAIN-SUFFIX,whispersystems.org,节点选择
+- DOMAIN-SUFFIX,wikia.com,节点选择
+- DOMAIN-SUFFIX,wn.com,节点选择
+- DOMAIN-SUFFIX,wolframalpha.com,节点选择
+- DOMAIN-SUFFIX,x-art.com,节点选择
+- DOMAIN-SUFFIX,yimg.com,节点选择
+
+- DOMAIN-KEYWORD,dlercloud,节点选择
+- DOMAIN-SUFFIX,dler.cloud,节点选择
+
+# Local Area Network
+- DOMAIN-KEYWORD,announce,DIRECT
+- DOMAIN-KEYWORD,torrent,DIRECT
+- DOMAIN-KEYWORD,tracker,DIRECT
+- DOMAIN-SUFFIX,smtp,DIRECT
+- DOMAIN-SUFFIX,local,DIRECT
+- IP-CIDR,192.168.0.0/16,DIRECT
+- IP-CIDR,10.0.0.0/8,DIRECT
+- IP-CIDR,172.16.0.0/12,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT
+- IP-CIDR,100.64.0.0/10,DIRECT
+
+# # > IQIYI
+# - IP-CIDR,101.227.0.0/16,Bilibili|iQIYI|NeteaseMusic|TencentVideo
+# - IP-CIDR,101.224.0.0/13,Bilibili|iQIYI|NeteaseMusic|TencentVideo
+# - IP-CIDR,119.176.0.0/12,Bilibili|iQIYI|NeteaseMusic|TencentVideo
+
+# # > Youku
+# - IP-CIDR,106.11.0.0/16,Bilibili|iQIYI|NeteaseMusic|TencentVideo
+
+# > Telegram
+- IP-CIDR,67.198.55.0/24,节点选择
+- IP-CIDR,91.108.4.0/22,节点选择
+- IP-CIDR,91.108.8.0/22,节点选择
+- IP-CIDR,91.108.12.0/22,节点选择
+- IP-CIDR,91.108.16.0/22,节点选择
+- IP-CIDR,91.108.56.0/22,节点选择
+- IP-CIDR,109.239.140.0/24,节点选择
+- IP-CIDR,149.154.160.0/20,节点选择
+- IP-CIDR,205.172.60.0/22,节点选择
+
+# (Extra IP-CIRD)
+# > Google
+- IP-CIDR,35.190.247.0/24,节点选择
+- IP-CIDR,64.233.160.0/19,节点选择
+- IP-CIDR,66.102.0.0/20,节点选择
+- IP-CIDR,66.249.80.0/20,节点选择
+- IP-CIDR,72.14.192.0/18,节点选择
+- IP-CIDR,74.125.0.0/16,节点选择
+- IP-CIDR,108.177.8.0/21,节点选择
+- IP-CIDR,172.217.0.0/16,节点选择
+- IP-CIDR,173.194.0.0/16,节点选择
+- IP-CIDR,209.85.128.0/17,节点选择
+- IP-CIDR,216.58.192.0/19,节点选择
+- IP-CIDR,216.239.32.0/19,节点选择
+# > Facebook
+- IP-CIDR,31.13.24.0/21,节点选择
+- IP-CIDR,31.13.64.0/18,节点选择
+- IP-CIDR,45.64.40.0/22,节点选择
+- IP-CIDR,66.220.144.0/20,节点选择
+- IP-CIDR,69.63.176.0/20,节点选择
+- IP-CIDR,69.171.224.0/19,节点选择
+- IP-CIDR,74.119.76.0/22,节点选择
+- IP-CIDR,103.4.96.0/22,节点选择
+- IP-CIDR,129.134.0.0/17,节点选择
+- IP-CIDR,157.240.0.0/17,节点选择
+- IP-CIDR,173.252.64.0/19,节点选择
+- IP-CIDR,173.252.96.0/19,节点选择
+- IP-CIDR,179.60.192.0/22,节点选择
+- IP-CIDR,185.60.216.0/22,节点选择
+- IP-CIDR,204.15.20.0/22,节点选择
+# > Twitter
+- IP-CIDR,69.195.160.0/19,节点选择
+- IP-CIDR,104.244.42.0/21,节点选择
+- IP-CIDR,192.133.76.0/22,节点选择
+- IP-CIDR,199.16.156.0/22,节点选择
+- IP-CIDR,199.59.148.0/22,节点选择
+- IP-CIDR,199.96.56.0/21,节点选择
+- IP-CIDR,202.160.128.0/22,节点选择
+- IP-CIDR,209.237.192.0/19,节点选择
+
+# > ChatGPT
+- DOMAIN-SUFFIX,openai.com,ChatGPT
+- DOMAIN-SUFFIX,chat.openai.com,ChatGPT
+
+# GeoIP China
+- GEOIP,CN,国内网站
+
+- MATCH,其他网站

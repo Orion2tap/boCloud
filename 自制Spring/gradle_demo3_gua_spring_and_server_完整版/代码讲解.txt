@@ -1,0 +1,30 @@
+运行方法
+运行 Main 类的 main 函数
+浏览器访问 http://localhost:9000/, 会显示 index
+访问 http://localhost:9000/login, 会显示 hello gua
+
+
+
+
+代码讲解
+
+Main 类是项目的入口
+lib 中有三个包
+Common 存通用函数
+guaServer 是 http 服务器, 用来接收请求和返回响应
+guaSpring 是自制的 Spring, 扫描类保存实例
+guaSpringMVC 是自制的 Spring MVC, 扫描类的方法, 保存 url 和 路由函数的对应关系
+
+
+Main.main 中调用
+Application.run 函数, 启动服务器和 guaServer
+
+Application.run 函数中做了这么几个事
+1. 扫描类, 载入类
+2. 遍历类, 根据注解生成需要的类的实例, 存入 BeanRegistry
+3. 在 Dispatcher 的构造器中, 从  BeanRegistry 里面取出被 Controller 注解的实例,
+扫描实例的方法, 判断是否被 GET 注解, 如果被 GET 注解, 说明是一个路由函数
+把 url 和路由函数的对应关系保存到  Dispatcher 的实例中
+4. 初始化一个 http 服务器 Server 实例, 把 Dispatcher 实例传进去
+5. 启动 http 服务器
+6. http 接受请求的时候, 会调用 Dispatcher 实例的 doDispatch 方法来分发请求给路由

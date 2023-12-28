@@ -1,0 +1,15 @@
+<mapper class="demo.Model.SessionMapper">
+    <sql method="add">
+        INSERT INTO `Session` (userID, sessionID) VALUES (?, ?)
+    </sql>
+    <sql method="lastInsertID">
+        SELECT LAST_INSERT_ID()
+    </sql>
+    <sql method="findUser">
+        SELECT * FROM `Session` WHERE sessionID=?
+    </sql>
+    <sql method="all">
+        SELECT * FROM `Session`
+    </sql>
+
+</mapper>

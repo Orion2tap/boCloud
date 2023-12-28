@@ -1,0 +1,13 @@
+demo 1-3 是自制 spring 的作业
+demo 1-2 是作业
+demo 3 是完整的自制 Spring 的代码, 可以运行
+
+
+demo 4-6 是自制 mybatis 的作业
+demo 4-5 是作业
+demo 6 是完整版的自制 mybatis 代码, 可以运行
+
+demo7 是完整的自制 Spring Boot, Spring, Mybatis , Spring MVC 的代码, 可以运行
+
+
+完整版的代码比较复杂, 需要先做作业理解代码的模块和框架
