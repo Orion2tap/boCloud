@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs/lib/stomp.min.js"></script>
+</head>
+<body>
+    <h2>WebSocket Test</h2>
+    <div id="messages"></div>
+
+    <script type="text/javascript">
+        var socket = new SockJS('http://localhost:30000/ws'); // WebSocket 连接端点
+        var stompClient = Stomp.over(socket);
+
+        stompClient.connect({}, function (frame) {
+            console.log('Connected: ' + frame);
+            stompClient.subscribe('/topic/datas', function (messageOutput) {
+                var message = JSON.parse(messageOutput.body);
+                showMessageOutput(message);
+            });
+        });
+
+        function showMessageOutput(messageOutput) {
+            var messageDiv = document.getElementById('messages');
+            var messageElement = document.createElement('div');
+            messageElement.appendChild(document.createTextNode(messageOutput));
+            messageDiv.appendChild(messageElement);
+        }
+    </script>
+</body>
+</html>
