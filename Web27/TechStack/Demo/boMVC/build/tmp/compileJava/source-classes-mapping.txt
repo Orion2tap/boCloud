@@ -1,0 +1,26 @@
+boMVC/models/User.java
+ boMVC.models.User
+boMVC/BoTemplate.java
+ boMVC.BoTemplate
+boMVC/models/ModelFactory.java
+ boMVC.models.ModelFactory
+boMVC/models/Serializer.java
+ boMVC.models.Serializer
+boMVC/models/Message.java
+ boMVC.models.Message
+boMVC/route/RouteAjaxTodo.java
+ boMVC.route.RouteAjaxTodo
+boMVC/Request.java
+ boMVC.Request
+boMVC/models/Todo.java
+ boMVC.models.Todo
+boMVC/models/Equality.java
+ boMVC.models.Equality
+boMVC/models/UserRole.java
+ boMVC.models.UserRole
+boMVC/models/Deserializer.java
+ boMVC.models.Deserializer
+boMVC/route/Route.java
+ boMVC.route.Route
+boMVC/models/Session.java
+ boMVC.models.Session

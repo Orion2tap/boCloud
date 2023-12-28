@@ -1,0 +1,12 @@
+[Unit]
+Description=java_jar_demo
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/tmp
+ExecStart=/usr/bin/java -jar /tmp/server.jar
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

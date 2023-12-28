@@ -1,0 +1,13 @@
+// 多项目构建的配置文件
+pluginManagement {
+    // 加入 Maven 仓库
+    repositories {
+        maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
+        mavenLocal()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+// 根项目名字
+rootProject.name = 'boSSM'

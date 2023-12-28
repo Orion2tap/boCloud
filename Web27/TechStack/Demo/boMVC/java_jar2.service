@@ -1,0 +1,12 @@
+[Unit]
+Description=java_jar_demo2
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/var/www/java
+ExecStart=/usr/bin/java -jar /var/www/java/server.jar
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+1
+bobo
+0dde5185db7da5c81f0fa71696506e4f
+admin
+2
+binbin
+b6a9bd16b4c14b52f84ae09b7b91bc0c
+normal
+3
+qqq
+0dde5185db7da5c81f0fa71696506e4f
+normal

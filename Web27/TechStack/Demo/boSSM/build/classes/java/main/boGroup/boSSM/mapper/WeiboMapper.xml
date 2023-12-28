@@ -1,0 +1,28 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="boGroup.boSSM.mapper.WeiboMapper">
+    <select id="selectAll" resultType="boGroup.boSSM.model.WeiboModel">
+        SELECT * FROM ssm.weibo
+    </select>
+
+    <!-- 传参方式1: 直接传入 id, 这个 id 会被绑定到 #{id} -->
+    <select id="select" resultType="boGroup.boSSM.model.WeiboModel">
+        SELECT * FROM ssm.weibo WHERE id = #{id}
+    </select>
+
+    <!-- 传参方式2，传入weiboModel, MyBatis 将 weiboModel.xxx 绑定到 #{xxx} -->
+    <!-- useGeneratedKeys="true" keyProperty="id" 把数据库返回的 id 赋值给 weiboModel.id -->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO ssm.weibo (content) VALUES (#{content})
+    </insert>
+    
+    <update id="update">
+        UPDATE ssm.weibo SET content = #{content} WHERE id = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM ssm.weibo WHERE id = #{id}
+    </delete>
+</mapper>

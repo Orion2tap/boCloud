@@ -1,0 +1,41 @@
+/* p {
+  color: red;
+} */
+
+html {
+  /* px 表示“像素（pixels）”: 基础字号为 10 像素 */
+  font-size: 10px;
+  /* Google fonts 输出的 CSS */
+  font-family: 'Mochiy Pop One', sans-serif;
+  background-color: #CAD5EC;
+}
+
+body {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #E8CABA;
+  padding: 0 20px 20px 20px;
+  border: 5px double black;
+}
+
+h1 {
+  margin: 0;
+  padding: 20px 0;
+  color: #00539F;
+  text-shadow: 3px 3px 1px black;
+  font-size: 40px;
+  text-align: center;
+  /* background-color: #92D9F1; */
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  width: 370px;
+}
+
+p,li {
+  font-size: 15px;
+  line-height: 2;
+  /* letter-spacing: 1px; */
+}

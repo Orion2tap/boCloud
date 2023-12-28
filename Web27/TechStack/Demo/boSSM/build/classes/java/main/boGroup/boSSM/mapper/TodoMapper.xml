@@ -1,0 +1,28 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="boGroup.boSSM.mapper.TodoMapper">
+    <select id="selectAll" resultType="boGroup.boSSM.model.TodoModel">
+        SELECT * FROM ssm.todo
+    </select>
+
+    <!-- 传参方式1: 直接传入 id, 这个 id 会被绑定到 #{id} -->
+    <select id="select" resultType="boGroup.boSSM.model.TodoModel">
+        SELECT * FROM ssm.todo WHERE id = #{id}
+    </select>
+
+    <!-- 传参方式2，传入todoModel, MyBatis 将 todoModel.xxx 绑定到 #{xxx} -->
+    <!-- useGeneratedKeys="true" keyProperty="id" 把数据库返回的 id 赋值给 todoModel.id -->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO ssm.todo (content) VALUES (#{content})
+    </insert>
+    
+    <update id="update">
+        UPDATE ssm.todo SET content = #{content} WHERE id = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM ssm.todo WHERE id = #{id}
+    </delete>
+</mapper>

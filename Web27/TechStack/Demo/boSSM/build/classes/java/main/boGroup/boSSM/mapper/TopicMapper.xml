@@ -1,0 +1,114 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="boGroup.boSSM.mapper.TopicMapper">
+    <!-- 传参方式1，传入xxxModel, MyBatis 将 xxxModel.xxx 绑定到 #{xxx} -->
+    <!-- useGeneratedKeys="true" keyProperty="id" 把数据库返回的 id 赋值给 xxxModel.id -->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO ssm.topic (title, content, userId, boardId, createdTime, updatedTime) VALUES (#{title}, #{content}, #{userId}, #{boardId}, #{createdTime}, #{updatedTime})
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM ssm.topic WHERE id = #{id}
+    </delete>
+
+    <update id="update">
+        UPDATE ssm.topic SET content = #{content}, updatedTime = #{updatedTime} WHERE id = #{id}
+    </update>
+
+    <!-- 传参方式2: 直接传入 id, 这个 id 会被绑定到 #{id} -->
+    <select id="selectOne" resultType="boGroup.boSSM.model.TopicModel">
+        SELECT * FROM ssm.topic WHERE id = #{id}
+    </select>
+
+    <select id="selectAll" resultType="boGroup.boSSM.model.TopicModel">
+        SELECT * FROM ssm.topic
+    </select>
+
+    <!--Model里的属性 映射到 数据库查询结果的属性-->
+    <resultMap id="selectOneWithCommentsMap" type="boGroup.boSSM.model.TopicModel" >
+        <id property="id" column="id" />
+        <result property="title" column="title" />
+        <result property="content" column="content" />
+        <collection property="comments" ofType="boGroup.boSSM.model.TopicCommentModel" >
+            <id property="id" column="c_id" />
+            <result property="content" column="c_content" />
+        </collection>
+
+    </resultMap>
+
+    <select id="selectOneWithComments" resultMap="selectOneWithCommentsMap">
+        select
+            topic.id,
+            topic.title,
+            topic.content,
+            topiccomment.id as c_id,
+            topiccomment.content as c_content
+
+        from  topic
+                  join topiccomment
+                       on topic.id = topiccomment.topicId
+        where topic.id = #{id}
+    </select>
+
+    <!--Model里的属性 映射到 数据库查询结果的属性-->
+    <resultMap id="selectOneWithCommentsAndUserMap" type="boGroup.boSSM.model.TopicModel" >
+        <!--贴子的id title content-->
+        <id property="id" column="id" />
+        <result property="title" column="title" />
+        <result property="content" column="content" />
+
+        <!--因为是 ArrayList<TopicCommentModel> 所以使用 <collection> 标签-->
+        <collection property="comments" ofType="boGroup.boSSM.model.TopicCommentModel" >
+            <!--评论的id content user createdTime updatedTime-->
+            <id property="id" column="c_id" />
+            <result property="content" column="c_content" />
+            <result property="createdTime" column="c_createdTime" />
+            <result property="updatedTime" column="c_updatedTime" />
+
+            <!--因为是单个的 UserModel 所以使用 <association> 标签-->
+            <association property="user" javaType="boGroup.boSSM.model.UserModel">
+                <result property="username" column="u_username" />
+            </association>
+        </collection>
+
+    </resultMap>
+
+    <select id="selectOneWithCommentsAndUser" resultMap="selectOneWithCommentsAndUserMap">
+        select
+            topic.id,
+            topic.title,
+            topic.content,
+            topiccomment.id as c_id,
+            topiccomment.content as c_content,
+            topiccomment.createdTime as c_createdTime,
+            topiccomment.updatedTime as c_updatedTime,
+            user.username as u_username
+
+        from  topic
+                  <!--使用 left join 没有评论或发帖人也能取到贴子-->
+                  left join topiccomment
+                            on topic.id = topiccomment.topicId
+                  left join user
+                            on user.id = topiccomment.userId
+
+        where topic.id = #{id}
+    </select>
+
+    <!-- 获得所有版块-->
+    <select id="selectAllBoards" resultType="boGroup.boSSM.model.BoardModel">
+        SELECT * FROM ssm.board
+    </select>
+
+    <!-- 根据版块id获取所有帖子-->
+    <select id="findTopicsByBoardId" resultType="boGroup.boSSM.model.TopicModel">
+        SELECT * FROM ssm.topic WHERE boardId = #{id}
+    </select>
+
+    <!-- 根据版块id获取版块-->
+    <select id="findBoardByBoardId" resultType="boGroup.boSSM.model.BoardModel">
+        SELECT * FROM ssm.board WHERE id = #{id}
+    </select>
+
+</mapper>

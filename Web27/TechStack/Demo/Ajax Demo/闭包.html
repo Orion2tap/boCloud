@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    var log = console.log.bind(console)
+
+    var f = function () {
+        // log("t: ", t)
+        // let t = 1;
+
+        var function_list = []
+        // for (var i = 0; i < 3; i++) {
+        //     function_list.push(function () {
+        //         log("i: ", i)
+        //     })
+        // }
+
+        for (let i = 0; i < 3; i++) {
+            function_list.push(function () {
+                log("i: ", i)
+            })
+        }
+
+        for (let e of function_list) {
+            e()
+        }
+
+    }
+
+    f()
+
+
+</script>
+
+</body>
+</html>
